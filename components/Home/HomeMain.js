@@ -5,7 +5,9 @@ import FoodAd from './FoodAd'
 export const HomeMain = () => {
   return (
     <div>
-      {/* <Banner> </Banner> */}
+      <Banner> </Banner>
+
+      
       <FoodAd> </FoodAd>
     </div>
   )
