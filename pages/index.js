@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import { HomeMain } from '../components/Home/HomeMain'
 import { Navbar } from '../components/Navabar/Navbar'
 import styles from '../styles/Home.module.css'
 
@@ -19,8 +20,6 @@ export default function Home() {
         <HomeMain> </HomeMain>
 
       </main>
-
-      <i className='text-center text-4xl font-bold'> Team Work food court </i>
     </div>
   )
 }
