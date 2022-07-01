@@ -22,11 +22,8 @@ export default function Home() {
         <Footer></Footer>
         
       </main>
-<<<<<<< HEAD
-=======
 
      
->>>>>>> abu_isa
     </div>
   )
 }
