@@ -20,11 +20,8 @@ export default function Home() {
         <HomeMain> </HomeMain>
 
       </main>
-<<<<<<< HEAD
-=======
 
      
->>>>>>> abu_isa
     </div>
   )
 }
