@@ -6,13 +6,13 @@ const Products = () => {
     return (
         <div>
             <div className="products__header text-center">
-                <h1 className='text-3xl text-red-500 mb-2'>Our Products</h1>
+                <h1 className='text-3xl text-red-500 mb-2 awesome-title'>Our Products</h1>
                 <h1 className='text-4xl font-semibold'>Delicious foods for delicious meal</h1>
             </div>
 
             <div className="products mt-10">
                 <div className="products__category">
-                    <div class="grid gap-5 grid-cols-6">
+                    <div class="grid gap-5 lg:grid-cols-6 md:grid-cols-3 sm:grid-cols-1">
                         <div className='category__item'>
                             <button class="btn w-full rounded-full tracking-wider active__category border-none">
                                 <Image src={`/assets/3_003.png`}
@@ -64,7 +64,7 @@ const Products = () => {
                     </div>
                 </div>
 
-                <div className="main__products grid gap-5 grid-cols-4 mt-10">
+                <div className="main__products grid gap-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-1 mt-10">
                     <div className="product__item">
                         <div class="w-full p-4">
                             <a href="" class="c-card block bg-white shadow-md hover:shadow-xl rounded-lg overflow-hidden">
