@@ -3,6 +3,7 @@ import { Banner } from './Banner'
 import { ChooseSection } from './ChooseSection'
 import FoodAd from './FoodAd'
 import Products from './Products'
+import { WhyChooseUs } from './WhyChooseUs'
 
 export const HomeMain = () => {
   return (
@@ -13,6 +14,7 @@ export const HomeMain = () => {
       
       <FoodAd> </FoodAd>
       <Products></Products>
+      <WhyChooseUs></WhyChooseUs>
     </div>
   )
 }
