@@ -1,0 +1,18 @@
+.bgWrap {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    height: 50vh;
+    width: 80vw;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.bgText {
+    margin: 0;
+    font-size: 2rem;
+    line-height: 3rem;
+    /* text-align: center; */
+    padding-top: 40vh;
+    text-shadow: 1px 1px 1px #3c5c5e;
+}
