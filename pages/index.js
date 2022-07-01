@@ -20,7 +20,7 @@ export default function Home() {
 
       </main>
 
-      <i className='text-center text-4xl font-bold'> Team Work food court </i>
+     
     </div>
   )
 }
