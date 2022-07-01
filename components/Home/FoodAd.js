@@ -5,11 +5,11 @@ import { bgWrap, bgText } from '../../styles/FoodAd.module.css'
 const FoodAd = () => {
     return (
         <div className='px-10'>
-            <div className='flex justify-around bg-[#FDC913] items-center rounded-2xl px-10'>
+            <div className='flex lg:justify-evenly lg:flex-row sm:flex-col bg-[#FDC913] lg:items-center rounded-2xl px-10'>
                 <div className='flex flex-col'>
-                    <i className=' text-5xl font-sans-serif'> Double Cheese </i>
-                    <span className='text-[#CE2829] font-bold text-7xl py-3 '> BURGER </span>
-                    <span className='text-2xl'> With Free Cocacola. Stay home ,</span>
+                    <i className='sm:text-lg lg:text-5xl font-sans-serif'> Double Cheese </i>
+                    <span className='text-[#CE2829] font-bold sm:text-2xl lg:text-7xl py-3 '> BURGER </span>
+                    <span className='sm:text-sm lg:text-2xl'> With Free Cocacola. Stay home ,</span>
                     <span className='text-2xl'> we deliver  </span>
                 </div>
                 <div>
