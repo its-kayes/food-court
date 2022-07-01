@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
 
 html,
 body {
@@ -17,4 +18,8 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.choose-title {
+  font-family: 'Satisfy', cursive;
 }
