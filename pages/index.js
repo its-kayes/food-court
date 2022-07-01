@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { Footer } from '../components/Footer/Footer'
 import { HomeMain } from '../components/Home/HomeMain'
 import { Navbar } from '../components/Navabar/Navbar'
 import styles from '../styles/Home.module.css'
@@ -14,6 +15,7 @@ export default function Home() {
       <main>
         <Navbar> </Navbar>
         <HomeMain> </HomeMain>
+        <Footer></Footer>
         
       </main>
 
