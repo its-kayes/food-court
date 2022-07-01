@@ -23,10 +23,9 @@ a {
   box-sizing: border-box;
 }
 
-<<<<<<< HEAD
 .awesome-title {
   font-family: 'Satisfy', cursive;
-=======
+}
 
 .active__category{
   background-color: #ff9f43;
@@ -34,5 +33,4 @@ a {
 
 .active__category:hover{
   background-color: #ff9f43;
->>>>>>> soumik
 }
