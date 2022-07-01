@@ -23,6 +23,9 @@ a {
   box-sizing: border-box;
 }
 
+.awesome-title {
+  font-family: 'Satisfy', cursive;
+}
 
 .active__category{
   background-color: #ff9f43;
