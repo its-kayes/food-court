@@ -7,7 +7,7 @@ export const ChooseSection = () => {
                 <div className="hero-content flex-col lg:flex-row">
                     <img src="https://themefie.com/html/foodka/assets/img/other/about.png" alt='' className="rounded-lg lg:w-3/6" />
                     <div className='text-center lg:text-left'>
-                        <h1 className="text-[#dc3545] mb-4 text-4xl choose-title">Why choose us</h1>
+                        <h1 className="text-[#dc3545] mb-4 text-4xl awesome-title">Why choose us</h1>
                         <h1 className="text-5xl font-semibold">Why we are the best</h1>
                         <p className="py-6 text-[#5f5f5f]">A, blandit euismod ullamcorper vestibulum enim habitasse. Ultrices tincidunt scelerisque elit enim. A neque malesuada in tortor eget justo mauris nec dolor. Consequat risus vitae, ac ac et preparation. He wanted to serve burgers, fries and beverages that tasted .</p>
                         <div className="grid lg:grid-cols-2 gap-6 text-[#292929]">
