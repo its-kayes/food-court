@@ -33,7 +33,7 @@
         "img":"https://i.ibb.co/5Fhvt1J/07.png"
     },
     {
-        "id":"30",
+        "id":"4",
         "name":"BBQ Chicken Pizza",
         "category":"Pizza",
         "discription":"",
@@ -44,7 +44,7 @@
         "img":"https://i.ibb.co/5Bw8X4D/08.png"
     },
     {
-        "id":"4",
+        "id":"5",
         "name":"Double Burger",
         "category":"Burger",
         "discription":"",
@@ -55,7 +55,7 @@
         "img":"https://i.ibb.co/y4y6Dcn/01.png"
     },
     {
-        "id":"5",
+        "id":"6",
         "name":"Gulliver Burger",
         "category":"Burger",
         "discription":"",
@@ -66,29 +66,19 @@
         "img":"https://i.ibb.co/zhr0nFT/02.png"
     },
     {
-        "id":"6",
-        "name":"Patty Buns Burgers",
-        "category":"Burger",
-        "discription":"",
-        "price":17,
-        "ratings":"4",
-        "quantity":"273582",
-        "status":"Yes",
-        "img":"https://i.ibb.co/MZhBYXf/04.png"
-    },
-    {
-        "id":"6",
-        "name":"Patty Buns Burgers",
-        "category":"Burger",
-        "discription":"",
-        "price":17,
-        "ratings":"4",
-        "quantity":"273582",
-        "status":"Yes",
-        "img":"https://i.ibb.co/MZhBYXf/04.png"
-    },
-    {
         "id":"7",
+        "name":"Patty Buns Burgers",
+        "category":"Burger",
+        "discription":"",
+        "price":17,
+        "ratings":"4",
+        "quantity":"273582",
+        "status":"Yes",
+        "img":"https://i.ibb.co/MZhBYXf/04.png"
+    },
+ 
+    {
+        "id":"8",
         "name":"Cheese Burger",
         "category":"Burger",
         "discription":"4",
