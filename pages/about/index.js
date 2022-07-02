@@ -8,7 +8,6 @@ function index() {
   return (
    <>
    <OurHistory/>
-   <ChooseSection/>
    <ParallaxSection/>
    <Testimonial/>
    </>
