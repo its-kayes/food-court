@@ -52,7 +52,7 @@ export const CartList = () => {
 
             <div className="my-5 flex flex-col lg:flex-row justify-around pb-10">
                 <div className='flex flex-col lg:flex-row gap-3 my-5 w-full'>
-                    <input type="text" placeholder="Coupon Code" class="input w-full lg:w-4/6" />
+                    <input type="text" placeholder="Coupon Code" class="input w-full lg:w-4/6  h-[56px]" />
                     <button class="btn border-none w-auto font-bold text-lg bg-[#FDCE29] hover:bg-[#FDCE29] h-[56px] rounded-md">APPLY COUPON</button>
                 </div>
                 <div className='w-full flex lg:justify-end  lg:px-5 my-5'>
