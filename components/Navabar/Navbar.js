@@ -2,7 +2,7 @@ import React from 'react'
 
 export const Navbar = () => {
     return (
-        <div className="navbar pl-12 bg-base-100 bg-opacity-100 sticky top-0">
+        <div className="navbar lg:pl-12 bg-base-100 bg-opacity-100">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex="0" className="btn btn-ghost lg:hidden">
@@ -16,8 +16,10 @@ export const Navbar = () => {
                                 <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
                             </a>
                             <ul className="p-2">
-                                <li><a>Submenu 1</a></li>
-                                <li><a>Submenu 2</a></li>
+                                <li><a className='font-semibold'>Blog</a></li>
+                                <li><a className='font-semibold'>Menu</a></li>
+                                <li><a className='font-semibold'>Menu List</a></li>
+                                <li><a className='font-semibold'>Shop</a></li>
                             </ul>
                         </li>
                         <li><a>ABOUT US</a></li>
