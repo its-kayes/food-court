@@ -52,11 +52,11 @@ export const Navbar = () => {
                 <ul className="menu menu-horizontal p-0">
                     <div className='flex justify-between items-center'>
                         <img src="https://i.ibb.co/r47stft/shopping-cart.png" alt="img" />
-                        <p className='ml-3'>45.67 $</p>
+                        <p className='ml-3 font-semibold'>45.67 $</p>
                     </div>
                     <div className='flex justify-center items-center ml-6'>
                         <img src="https://i.ibb.co/XJ25pnr/phone.png" alt="img" />
-                        <p className='ml-4'>+99 097452715</p>
+                        <p className='ml-4 font-semibold'>+99 097452715</p>
                     </div>
                 </ul>
             </div>
