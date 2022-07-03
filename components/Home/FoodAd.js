@@ -18,8 +18,8 @@ const FoodAd = () => {
             </div>
 
 
-            <div className='flex justify-around my-10'>
-                <div className='bg-[#000000] p-6 rounded-2xl'>
+            <div className='lg:flex lg:justify-around my-10 sm:grid sm:grid-rows-1  '>
+                <div className='bg-[#000000] p-6 rounded-2xl lg:w-[30%] my-10 sm:w-full '>
                     <div className='flex flex-col'>
                         <span className='text-[#FDC913] text-4xl font-bold  py-2 '> Enjoy 30% CashBack </span>
                         <span className='text-3xl text-white py-2 '> Up to $70 on all Bikash </span>
@@ -28,7 +28,7 @@ const FoodAd = () => {
                         <Image src="/ad1.png" alt='coca' width="350%" height="300%" />
                     </div>
                 </div>
-                <div className='bg-[#F8F7F2] p-6 rounded-2xl w-[30%]'>
+                <div className='bg-[#F8F7F2] p-6 rounded-2xl lg:w-[30%] sm:w-full my-10'>
                     <div className='flex flex-col items-center '>
                         <span className='text-[#CE2829] text-4xl font-bold'> 25 EXTRA </span>
                         <span className='text-5xl font-bold'> FREE ON KFC </span>
@@ -38,7 +38,7 @@ const FoodAd = () => {
                         <Image src="/ad2.png" alt='coca' width="400%" height="300%" />
                     </div>
                 </div>
-                <div className='bg-[#39251D] w-[30%] items-center p-6 rounded-2xl'>
+                <div className='bg-[#39251D] items-center p-6 rounded-2xl lg:w-[30%] w-full sm:my-10'>
                     <div className='flex flex-col '>
                         <i className='text-[#FDC913] font-serif text-2xl'> Text with </i>
                         <span className='text-4xl font-bold text-[#FDC913]'> JAPANESE </span>
