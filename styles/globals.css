@@ -32,3 +32,7 @@ a {
 .active__category:hover{
   background-color: #ff9f43;
 }
+
+.footer{
+  background-color: #2c3e50;
+}
