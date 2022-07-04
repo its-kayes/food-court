@@ -4,7 +4,7 @@ function index({food}) {
    const {name,img}=food;
   return (
     <div>
-        <div class="card card-compact w-96 bg-base-100 shadow-xl">
+        <div class="card card-compact w-96 bg-base-100 shadow-xl mx-auto">
               <figure><img src={img} alt="Shoes" /></figure>
               <div class="card-body">
                 <h2 class="card-title">{name}</h2>
