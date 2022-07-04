@@ -1,9 +1,12 @@
 import Image from 'next/image';
 import React from 'react';
+import { Footer } from '../../components/Footer/Footer';
+import { Navbar } from '../../components/Navbar/Navbar';
 
 const index = () => {
     return (
         <div>
+            <Navbar> </Navbar>
             <div className='flex justify-around bg-[#FAF7F2] h-screen items-center p-40'>
                 <div className=''>
                     <div className='flex mt-6'>
@@ -45,6 +48,7 @@ const index = () => {
                     </div>
                 </div>
             </div>
+            <Footer> </Footer>
         </div>
     );
 };

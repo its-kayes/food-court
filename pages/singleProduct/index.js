@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { FaStar, FaStarHalf } from 'react-icons/fa';
+import { Footer } from '../../components/Footer/Footer';
+import { Navbar } from '../../components/Navbar/Navbar';
 import Description from './Description';
 import Information from './Information';
 import Review from './Review';
@@ -11,6 +13,8 @@ const singleProduct = () => {
     const [reviews,setReviews] = useState(false);
     console.log('des',description, 'inf',information,'rev',reviews)
     return (
+        <>
+        <Navbar> </Navbar>
         <div className='min-h-screen mt-12 mb-8'>
             <div>
                 <div className=' grid grid-cols-1 lg:grid-cols-2 '>
@@ -113,6 +117,8 @@ const singleProduct = () => {
                 </div>
             </div>
         </div>
+        <Footer> </Footer>
+        </>
     );
 };
 

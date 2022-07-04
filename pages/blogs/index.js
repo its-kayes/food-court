@@ -2,6 +2,8 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import Blog from './Blog'
 import Image from 'next/image'
+import { Footer } from '../../components/Footer/Footer'
+import { Navbar } from '../../components/Navbar/Navbar'
 
 
 const index = () => {
@@ -13,6 +15,8 @@ const index = () => {
   }, [])
   return (
     <div>
+      <Navbar> </Navbar>
+
       <div class="grid-container md:grid grid-cols-12">
         <div className=" item1 col-span-8">
           <div class="grid-container md:grid grid-cols-2 gap-4 p-7">
@@ -33,19 +37,20 @@ const index = () => {
             </div>
             <div className='mt-11 bg-orange-50 p-5 rounded'>
               <h1 className='text-2xl font-medium mb-6'>Recent Post</h1>
-              
-                {
-                  foods.map(food =><div food={food} className='flex items-center mb-5'>
-                    <Image width={60} height={80} className='' src={food.img} alt="" />
-                    <h4 className='font-medium p-3 text-lg'>{food.name}</h4>
-                  </div>)
-                }
-              
+
+              {
+                foods.map(food => <div food={food} className='flex items-center mb-5'>
+                  <Image width={60} height={80} className='' src={food.img} alt="" />
+                  <h4 className='font-medium p-3 text-lg'>{food.name}</h4>
+                </div>)
+              }
+
             </div>
           </div>
 
         </div>
       </div>
+      <Footer> </Footer>
     </div>
   )
 }
