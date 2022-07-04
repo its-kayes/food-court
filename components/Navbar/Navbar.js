@@ -48,6 +48,7 @@ export const Navbar = () => {
                                 {menuItems}
                             </ul>
                         </li>
+                        <li><Link href='/cart' className='font-semibold'>Cart</Link></li>
                         <li><Link href='/about' className='font-semibold'>ABOUT US</Link></li>
                         <li><Link href='/contact' className='font-semibold'>CONTACTS</Link></li>
                     </ul>
