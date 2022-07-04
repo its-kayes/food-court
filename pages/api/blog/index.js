@@ -16,8 +16,8 @@ export default async function handler(req, res){
 
     if(method === 'POST'){
         try{
-            const newProduct = await Blog.create(req.body);
-            res.send({ newBlogs, message:"Saved" })
+            const newBlog = await Blog.create(req.body);
+            res.send({ newBlog, message:"Saved" })
         }catch(error){
             res.status(500).send('Server error');
         }
