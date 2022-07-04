@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 
 function index() {
     return (
@@ -22,7 +23,7 @@ function index() {
 
                         <input className='btn btn-sm w-full text-black font-bold bg-primary max-w-xs mt-4' type="submit" value="SignUp" />
                     </form>
-                    <p>Already have an account? <a className='text-neutral' to="/login">Please Login</a></p>
+                    <p>Already have an account? <Link href='/login' ><span className='text-neutral cursor-pointer'>Please Login</span></Link></p>
 
                 </div>
             </div>

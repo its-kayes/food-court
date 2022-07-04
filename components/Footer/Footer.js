@@ -1,5 +1,6 @@
-import React from 'react'
-import { AiFillFacebook, AiFillInstagram, AiFillTwitterCircle, AiFillLinkedin } from 'react-icons/ai'
+import React from 'react';
+import { AiFillFacebook, AiFillInstagram, AiFillTwitterCircle, AiFillLinkedin } from 'react-icons/ai';
+import Link from 'next/link';
 
 export const Footer = () => {
   return (
@@ -19,11 +20,26 @@ export const Footer = () => {
           <a className="link link-hover ">Jobs</a>
           <a className="link link-hover ">Press kit</a>
         </div>
+<<<<<<< HEAD
+        <div className='lg:mt-0 md:mt-0 sm: mt-10'>
+          <span className="footer-title text-white">Company</span>
+          <a className="link link-hover text-white">About us</a>
+          <a className="link link-hover text-white">Contact</a>
+          <a className="link link-hover text-white">Jobs</a>
+          <a className="link link-hover text-white">Press kit</a>
+        </div>
+        <div className='lg:mt-0 md:mt-0 sm: mt-10'>
+          <span className="footer-title text-white">Legal</span>
+          <a className="link link-hover text-white">Terms of use</a>
+          <a className="link link-hover text-white">Privacy policy</a>
+          <a className="link link-hover text-white">Cookie policy</a>
+=======
         <div>
           <span className="footer-title ">Legal</span>
           <a className="link link-hover ">Terms of use</a>
           <a className="link link-hover ">Privacy policy</a>
           <a className="link link-hover ">Cookie policy</a>
+>>>>>>> 2caf2f87906ac5cb0edfde35d743b28ee60e5eca
         </div>
       </footer>
       <footer style={{ background: "#faf7f2" }} className="footer px-10 py-4 border-t bg-base-200 text-base-content border-base-300">
