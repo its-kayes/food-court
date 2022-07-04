@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { FaStar, FaStarHalf } from 'react-icons/fa';
-import Link from 'next/link'
 import Description from './Description';
 import Information from './Information';
 import Review from './Review';
@@ -15,7 +14,7 @@ const singleProduct = () => {
         <div className='min-h-screen mt-12 mb-8'>
             <div>
                 <div className=' grid grid-cols-1 lg:grid-cols-2 '>
-                    <div className='h-[1000px] bg-[#faf7f2] mr-6'>
+                    <div className='h-[1000px] bg-[#faf7f2] mr-6 static'>
                         <div className='w-3/4 mt-12 mx-auto '>
                             <img src="https://themefie.com/html/foodka/assets/img/shop/single-1.png" alt="" />
                         </div>
@@ -25,7 +24,7 @@ const singleProduct = () => {
                             <img src="https://themefie.com/html/foodka/assets/img/shop/1.png" alt="" />
                         </div>
                     </div>
-                    <div className='lg:w-3/4 scroll-m-0'>
+                    <div className='lg:w-3/4 scroll-my-80'>
                         <h1 className='text-5xl'>Maxican Pizza Test Better</h1>
                         <div className='flex justify-between items-center'>
                             <p className='text-2xl font-bold'>$27.00</p>
