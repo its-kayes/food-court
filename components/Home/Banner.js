@@ -34,8 +34,8 @@ export const Banner = () => {
         </div>
       </div>
 
-      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:w-3/4 sm:w-full mx-auto pb-12 '>
-        <div className=" w-96 bg-base-100 hover:rounded-2xl rounded-2xl">
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:w-11/12 sm:w-full mx-auto pb-12 '>
+        <div className=" min-w-min bg-base-100 hover:rounded-2xl rounded-2xl">
           <div onVolumeChange={() => console.log('ok focus done')} className="card-body rounded-2xl hover:rounded-2xl hover:bg-[#fdc913] duration-1000 ease-in">
             <div className='flex justify-center'>
               <img width={100} src="https://i.ibb.co/HnGYb4Z/calendar-removebg-preview.png " alt="" />
@@ -44,7 +44,7 @@ export const Banner = () => {
             <p className='text-center'>Working Hours</p>
           </div>
         </div>
-        <div className=" w-96 bg-base-100 hover:rounded-2xl rounded-2xl">
+        <div className=" min-w-min bg-base-100 hover:rounded-2xl rounded-2xl">
           <div className="card-body rounded-2xl hover:rounded-2xl hover:bg-[#fdc913] duration-1000 ease-in">
             <div className='flex justify-center'>
               <img width={100} src="https://i.ibb.co/smjp03S/map-marker-removebg-preview.png" alt="" />
@@ -55,7 +55,7 @@ export const Banner = () => {
             </p>
           </div>
         </div>
-        <div className=" w-96 bg-base-100 hover:rounded-2xl rounded-2xl">
+        <div className=" min-w-min bg-base-100 hover:rounded-2xl rounded-2xl">
           <div className="card-body rounded-2xl hover:rounded-2xl hover:bg-[#fdc913] duration-1000 ease-in">
             <div className='flex justify-center'>
               <img width={100} src="https://i.ibb.co/58K5j3L/phone-2-removebg-preview.png" alt="" />
