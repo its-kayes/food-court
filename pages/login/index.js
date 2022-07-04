@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 
 function index() {
   return (
@@ -19,7 +20,7 @@ function index() {
             <p className=''>Forgotten password? <button className="text-red-500">Reset Password</button></p>
           </form>
 
-          <p className=''>New to Food Court? <a className='text-neutral'>Create your account</a></p>
+          <p className=''>New to Food Court? <Link href='/signup' ><span  className='text-neutral cursor-pointer'>Create your account</span></Link></p>
 
         </div>
 
