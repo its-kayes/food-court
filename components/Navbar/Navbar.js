@@ -9,7 +9,7 @@ export const Navbar = () => {
         <li><Link href='/shop' className='font-semibold'>Shop</Link></li>
     </>
     return (
-        <div className="navbar lg:pl-40 py-10 bg-[#FAF7F2] bg-opacity-100 ">
+        <div className="navbar lg:pl-12 bg-base-100 bg-opacity-100">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex="0" className="btn btn-ghost lg:hidden">
