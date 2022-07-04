@@ -1,10 +1,11 @@
 import React from 'react';
 import Image from 'next/image'
-import { AiFillStar, AiOutlineShoppingCart } from 'react-icons/ai'
+import { AiOutlineShoppingCart } from 'react-icons/ai'
+import Rating from './rating';
 
 const Product = ({ product }) => {
 
-    const { title, img, status, price, ratings } = product;
+    const { title, img, status, price, rating, desc } = product;
 
     return (
         <div className="product__item">
@@ -22,20 +23,16 @@ const Product = ({ product }) => {
                            
                         </div>
 
-                        <p class="text-sm">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ullamcorper nulla non metus auctor fringilla.</p>
+                        <p class="text-sm">{ desc }</p>
                         <div className="ratings flex items-center my-4">
                             <h2>Rating: </h2>
                             <div className='flex items-center ml-5'>
-                                <AiFillStar className='text-yellow-300' />
-                                <AiFillStar className='text-yellow-300' />
-                                <AiFillStar className='text-yellow-300' />
-                                <AiFillStar className='text-yellow-300' />
-                                <AiFillStar className='text-yellow-300' />
+                                <Rating rating={rating} ></Rating>
                             </div>
                         </div>
                         <div class="mt-3 flex justify-between items-center">
                             <div>
-                                <span class="font-bold text-xl">45,00</span>&nbsp;<span class="text-sm font-semibold">BDT</span>
+                                <span class="font-bold text-xl">{ price }</span>&nbsp;<span class="text-sm font-semibold">BDT</span>
                             </div>
                             <div>
                                 <button class="btn btn-sm text-white"><AiOutlineShoppingCart className='mr-3' /> Add to Cart</button>
