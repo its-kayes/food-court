@@ -32,7 +32,7 @@ export const CartList = () => {
 
     return (
         // <QueryClientProvider client={queryClient}>
-            <ReactQueryCacheProvider queryCache={queryCache}>
+            // <ReactQueryCacheProvider queryCache={queryCache}>
                 <div className='mt-24 mx-5 lg:mx-24 '>
                     <div class="overflow-x-auto">
                         <table class="table w-full text-xl">
@@ -100,7 +100,7 @@ export const CartList = () => {
                         </div>
                     </div>
                 </div>
-            </ReactQueryCacheProvider>
+            // </ReactQueryCacheProvider>
         // </QueryClientProvider>
     )
 }
