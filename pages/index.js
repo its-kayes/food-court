@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Footer } from '../components/Footer/Footer'
 import { HomeMain } from '../components/Home/HomeMain'
-import { Navbar } from '../components/Navabar/Navbar'
+import { Navbar } from '../components/Navbar/Navbar'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
@@ -20,10 +20,10 @@ export default function Home() {
         <Navbar> </Navbar>
         <HomeMain> </HomeMain>
         <Footer></Footer>
-        
+
       </main>
 
-     
+
     </div>
   )
 }

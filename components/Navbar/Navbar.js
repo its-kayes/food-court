@@ -2,7 +2,7 @@ import React from 'react'
 
 export const Navbar = () => {
     return (
-        <div className="navbar pl-12 bg-base-100 bg-opacity-100">
+        <div className="navbar lg:pl-12 bg-base-100 bg-opacity-100">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex="0" className="btn btn-ghost lg:hidden">
