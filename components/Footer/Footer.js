@@ -20,6 +20,20 @@ export const Footer = () => {
           <a className="link link-hover ">Jobs</a>
           <a className="link link-hover ">Press kit</a>
         </div>
+
+        <div className='lg:mt-0 md:mt-0 sm: mt-10'>
+          <span className="footer-title text-white">Company</span>
+          <a className="link link-hover text-white">About us</a>
+          <a className="link link-hover text-white">Contact</a>
+          <a className="link link-hover text-white">Jobs</a>
+          <a className="link link-hover text-white">Press kit</a>
+        </div>
+        <div className='lg:mt-0 md:mt-0 sm: mt-10'>
+          <span className="footer-title text-white">Legal</span>
+          <a className="link link-hover text-white">Terms of use</a>
+          <a className="link link-hover text-white">Privacy policy</a>
+          <a className="link link-hover text-white">Cookie policy</a>
+        </div>
         <div>
           <span className="footer-title ">Legal</span>
           <a className="link link-hover ">Terms of use</a>
