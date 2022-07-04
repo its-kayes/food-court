@@ -1,6 +1,13 @@
+import Link from 'next/link'
 import React from 'react'
 
 export const Navbar = () => {
+    const menuItems = <>
+        <li><Link href='/blog' className='font-semibold'>Blog</Link></li>
+        <li><Link href='/menu' className='font-semibold'>Menu</Link></li>
+        <li><Link href='/menulist' className='font-semibold'>Menu List</Link></li>
+        <li><Link href='/shop' className='font-semibold'>Shop</Link></li>
+    </>
     return (
         <div className="navbar lg:pl-40 py-10 bg-[#FAF7F2] bg-opacity-100 ">
             <div className="navbar-start">
@@ -16,10 +23,7 @@ export const Navbar = () => {
                                 <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
                             </a>
                             <ul className="p-2">
-                                <li><a className='font-semibold'>Blog</a></li>
-                                <li><a className='font-semibold'>Menu</a></li>
-                                <li><a className='font-semibold'>Menu List</a></li>
-                                <li><a className='font-semibold'>Shop</a></li>
+                                {menuItems}
                             </ul>
                         </li>
                         <li><a>ABOUT US</a></li>
@@ -39,14 +43,11 @@ export const Navbar = () => {
                                 <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
                             </a>
                             <ul className="p-2 bg-slate-200">
-                                <li><a className='font-semibold'>Blog</a></li>
-                                <li><a className='font-semibold'>Menu</a></li>
-                                <li><a className='font-semibold'>Menu List</a></li>
-                                <li><a className='font-semibold'>Shop</a></li>
+                            {menuItems}
                             </ul>
                         </li>
-                        <li><a className='font-semibold'>ABOUT US</a></li>
-                        <li><a className='font-semibold'>CONTACTS</a></li>
+                        <li><Link href='/about' className='font-semibold'>ABOUT US</Link></li>
+                        <li><Link href='/contact' className='font-semibold'>CONTACTS</Link></li>
                     </ul>
                 </div>
             </div>

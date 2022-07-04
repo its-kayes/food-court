@@ -1,5 +1,6 @@
-import React from 'react'
-import { AiFillFacebook, AiFillInstagram, AiFillTwitterCircle, AiFillLinkedin } from 'react-icons/ai'
+import React from 'react';
+import { AiFillFacebook, AiFillInstagram, AiFillTwitterCircle, AiFillLinkedin } from 'react-icons/ai';
+import Link from 'next/link';
 
 export const Footer = () => {
   return (
@@ -28,7 +29,7 @@ export const Footer = () => {
           <a className="link link-hover text-white">Jobs</a>
           <a className="link link-hover text-white">Press kit</a>
         </div>
-        <div className='lg:mt-0 md:mt-0 sm: mt-10'> 
+        <div className='lg:mt-0 md:mt-0 sm: mt-10'>
           <span className="footer-title text-white">Legal</span>
           <a className="link link-hover text-white">Terms of use</a>
           <a className="link link-hover text-white">Privacy policy</a>
