@@ -59,10 +59,10 @@ export const CartList = () => {
                                 </td>
                                 <td>
                                     <div>
-                                        <h5>All Season Gulliver Pizza</h5>
+                                        {/* <h5>All Season {order.name} </h5> */}
                                         <ul>
-                                            <li><span>Select Size: </span>Large</li>
-                                            <li><span>Select Crust: </span>Double Crust</li>
+                                            <li><span>Order Size: </span>Large</li>
+                                            <li><span>Order Name: </span> {order.name} </li>
                                         </ul>
                                     </div>
                                 </td>
