@@ -5,8 +5,10 @@ import Rating from './rating';
 
 const Product = ({ product }) => {
 
-    const { title, img, status, price, rating, desc } = product;
-
+    const { title, img, status, price, rating, desc,_id } = product;
+    const addToCart =(id)=>{
+        
+    }
     return (
         <div className="product__item">
             <div className="w-full p-4">
@@ -35,7 +37,7 @@ const Product = ({ product }) => {
                                 <span class="font-bold text-xl">{ price }</span>&nbsp;<span class="text-sm font-semibold">BDT</span>
                             </div>
                             <div>
-                                <button class="btn btn-sm text-white"><AiOutlineShoppingCart className='mr-3' /> Add to Cart</button>
+                                <button onClick={()=>addToCart(_id)} class="btn btn-sm text-white"><AiOutlineShoppingCart className='mr-3' /> Add to Cart</button>
                             </div>
                         </div>
                     </div>
