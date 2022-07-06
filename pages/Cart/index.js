@@ -1,7 +1,7 @@
 import React from 'react';
-import { Breadcrumb } from './Breadcrumb';
+import { Breadcrumb } from '../../components/cart/Breadcrumb'
+import { CartList } from '../../components/cart/CartList'
 import Head from 'next/head'
-import { CartList } from './CartList';
 const Cart = () => {
     return (
         <div className='bg-[#FAF7F2]'>
