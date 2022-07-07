@@ -3,10 +3,12 @@ import Link from 'next/link'
 import { Navbar } from '../../components/Navbar/Navbar'
 import { Footer } from '../../components/Footer/Footer'
 import { toast } from 'react-toastify';
-function index() {
 
+
+function index() {
   const handleLogin = e => {
     e.preventDefault();
+
 
     const email = e.target.email.value;
     const password = e.target.password.value;
@@ -24,7 +26,9 @@ function index() {
       .then(res => res.json())
       .then(data => {
         if (data.success && data.users.length > 0) {
-          toast.success("Login successful")
+          // toast.success("Login successful");
+          localStorage.setItem('email', email);
+          <Link href="/" />
         } else {
           toast.error("Email or password is wrong")
         }

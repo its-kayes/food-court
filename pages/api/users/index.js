@@ -18,8 +18,10 @@ export default async function handler(req, res) {
             }
         }
         try {
-            const users = await User.find(query);
-            res.send({ users, message: 'Successfully loaded products', success: true });
+            const user = await User.findOne(query);
+            console.log(user)
+            res.send({ user, message: 'Successfully loaded products', success: true });
+
         } catch (error) {
             res.status(500).send({ error: error, message: 'Server side error', success: false });
         }
