@@ -24,6 +24,8 @@ function index() {
       return;
     }
 
+
+
     fetch(`http://localhost:3000/api/users?email=${email}&password=${password}`)
       .then(res => res.json())
       .then(data => {
