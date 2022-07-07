@@ -1,7 +1,8 @@
 import React from 'react';
 import Image from 'next/image'
 import { AiOutlineShoppingCart } from 'react-icons/ai'
-import Rating from './rating';
+import Rating from "./Rating";
+// import Rating from './rating';
 
 const Product = ({ product }) => {
     const { title, img, status, price, rating, desc, _id } = product;
