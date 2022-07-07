@@ -6,12 +6,15 @@ import Description from './Description';
 import Information from './Information';
 import Review from './Review';
 
-const singleProduct = () => {
+const SingleProduct = () => {
+
     const [quantity, setQuantity] = useState(1);
     const [description, setDescription] = useState(true);
     const [information, setInformation] = useState(false);
     const [reviews, setReviews] = useState(false);
     console.log('des', description, 'inf', information, 'rev', reviews)
+
+
     return (
         <>
             <Navbar> </Navbar>
@@ -45,13 +48,13 @@ const singleProduct = () => {
                                     <p className='text-2xl font-semibold mb-6'>Select Size</p>
                                     <div className='grid lg:w-3/4 grid-cols-1 gap-4 md:grid-cols-3'>
                                         <button className="btn btn-circle bg-[#faf7f2] border-0 text-red-600 hover:bg-red-500 hover:text-white font-bold">
-                                            10"
+                                            10
                                         </button>
                                         <button className="btn btn-circle bg-[#faf7f2] border-0 text-red-600 hover:bg-red-500 hover:text-white font-bold">
-                                            12"
+                                            12
                                         </button>
                                         <button className="btn btn-circle bg-[#faf7f2] border-0 text-red-600 hover:bg-red-500 hover:text-white font-bold">
-                                            14"
+                                            14
                                         </button>
                                     </div>
                                 </div>
@@ -122,4 +125,4 @@ const singleProduct = () => {
     );
 };
 
-export default singleProduct;
+export default SingleProduct;
