@@ -7,15 +7,15 @@ const Products = () => {
 
     const [products, setProducts] = useState([])
     const [isLoading, setLoading] = useState(false)
-  
+
     useEffect(() => {
-      setLoading(true)
-      fetch('http://localhost:3000/api/product')
-        .then(res => res.json())
-        .then(data => {
-            setProducts(data.products)
-            setLoading(false)
-        })
+        setLoading(true)
+        fetch('http://localhost:3000/api/product')
+            .then(res => res.json())
+            .then(data => {
+                setProducts(data.products)
+                setLoading(false)
+            })
     }, [])
 
     if (isLoading) return <p className='text-center'>Products Loading...</p>
@@ -30,7 +30,7 @@ const Products = () => {
 
             <div className="products mt-10">
                 <div className="products__category">
-                    <div class="grid gap-5 lg:grid-cols-6 md:grid-cols-3 sm:grid-cols-1">
+                    <div className="grid gap-5 lg:grid-cols-6 md:grid-cols-3 sm:grid-cols-1">
                         <div className='category__item'>
                             <button className="btn w-full rounded-full tracking-wider active__category border-none">
                                 <Image src={`/assets/3_003.png`}
@@ -84,7 +84,7 @@ const Products = () => {
 
                 <div className="main__products grid gap-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-1 mt-10">
                     {
-                        products.slice(0, 4).map(product => <Product 
+                        products.slice(0, 4).map(product => <Product
                             product={product}
                             key={product._id}
                         />)
