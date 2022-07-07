@@ -2,10 +2,6 @@ import React from 'react';
 import { Breadcrumb } from '../../components/cart/Breadcrumb'
 import { CartList } from '../../components/cart/CartList'
 import Head from 'next/head'
-<<<<<<< HEAD
-// import { CartList } from './CartList';
-=======
->>>>>>> 3ae7a23909132eb5b5ddd4800c6f4eb2694b3957
 import { Navbar } from '../../components/Navbar/Navbar';
 import { Footer } from '../../components/Footer/Footer';
 const Cart = () => {
