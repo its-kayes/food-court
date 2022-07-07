@@ -3,9 +3,11 @@ import Link from 'next/link'
 import { Navbar } from '../../components/Navbar/Navbar'
 import { Footer } from '../../components/Footer/Footer'
 import { toast } from 'react-toastify';
+import { useRouter } from 'next/router'
 
 
 function index() {
+  const router = useRouter()
   const handleLogin = e => {
     e.preventDefault();
 
@@ -25,10 +27,10 @@ function index() {
     fetch(`http://localhost:3000/api/users?email=${email}&password=${password}`)
       .then(res => res.json())
       .then(data => {
-        if (data.success && data.users.length > 0) {
+        if (data.success) {
           // toast.success("Login successful");
           localStorage.setItem('email', email);
-          <Link href="/" />
+          router.push('/')
         } else {
           toast.error("Email or password is wrong")
         }
