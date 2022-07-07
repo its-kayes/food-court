@@ -25,7 +25,7 @@ function index() {
               <p className=''>Forgotten password? <button className="text-red-500">Reset Password</button></p>
             </form>
 
-            <p className=''>New to Food Court? <Link href='/signup' ><span className='text-neutral cursor-pointer'>Create your account</span></Link></p>
+            <p className=''>New to Food Court? <a className='text-neutral'>Create your account</a></p>
 
           </div>
 
@@ -36,5 +36,7 @@ function index() {
     </>
   )
 }
+
+
 
 export default index
