@@ -12,7 +12,7 @@ export const getStaticProps = async () => {
 
 function index({ items }) {
 
-
+    console.log(items);
     return (
         <>
             <Navbar> </Navbar>
@@ -27,9 +27,9 @@ function index({ items }) {
                         items.map(item =>
 
 
-                            <div className="card card-side">
+                            <div key={item.id} className="card card-side">
 
-                                <figure><img className={itemImg} src={item.img} alt="aa"  ></img></figure>
+                                <figure><img  className={itemImg} src={item.img} alt="aa"  ></img></figure>
                                 <div className="card-body">
                                     <h2 className="text-center text-2xl font-medium ">{item.name}</h2>
                                     <p className='text-lg text-center my-2 text-gray-400'>Pizza is a savory dish of Italian origin consisting of a usually round, flattened base of leavened.</p>

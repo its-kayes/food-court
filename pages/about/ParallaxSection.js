@@ -24,7 +24,7 @@ const ParallaxSection = () => {
               favorite dish
             </h1>
           </div>
-          <label for="my-modal-3" className="modal-button">
+          <label htmlFor="my-modal-3" className="modal-button">
             <img
               width={120}
               src="https://i.postimg.cc/MZ5bFQbd/play-button.png"

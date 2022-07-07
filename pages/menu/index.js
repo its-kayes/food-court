@@ -4,7 +4,7 @@ import { Navbar } from '../../components/Navbar/Navbar';
 import { Footer } from '../../components/Footer/Footer';
 import Product from '../../components/Home/Product';
 
-const index = () => {
+const Index = () => {
 
     const [products, setProducts] = useState([])
     const [isLoading, setLoading] = useState(false)
@@ -118,5 +118,5 @@ const index = () => {
     );
 };
 
-export default index;
+export default Index;
 

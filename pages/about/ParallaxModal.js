@@ -7,12 +7,12 @@ const ParallaxModal = () => {
       <div className="modal">
         <div className="modal-box relative">
           <label
-            for="my-modal-3"
+            htmlFor="my-modal-3"
             className="btn btn-sm btn-circle absolute right-2 top-2"
           >
             ✕
           </label>
-          <iframe width="460" height="315" src="https://www.youtube.com/embed/X2jakwIVLbY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe width="460" height="315" src="https://www.youtube.com/embed/X2jakwIVLbY" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
         </div>
       </div>
     </div>
