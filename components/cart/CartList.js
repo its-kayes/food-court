@@ -69,14 +69,14 @@ export const CartList = () => {
                                 <td>$ {order.price} </td>
                                 <td class="p-4 px-6 text-center whitespace-nowrap">
                                     <div>
-                                        <button class="px-2 py-0 shadow">-</button>
+                                        {/* <button class="px-2 py-0 shadow">-</button> */}
                                         <input
                                             type="text"
                                             name="qty"
                                             value={order.quantity}
                                             class="w-12 text-center bg-gray-100 outline-none"
                                         />
-                                        <button class="px-2 py-0 shadow">+</button>
+                                        {/* <button class="px-2 py-0 shadow">+</button> */}
                                     </div>
                                 </td>
 
