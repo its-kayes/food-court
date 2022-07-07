@@ -20,12 +20,9 @@ const useUser = () => {
         }, [email])
     }
 
-    // if (email) {
+    if (email) {
 
-    // }
-    // else {
-    //     router.push('/login')
-    // }
+    }
     return { user };
 };
 

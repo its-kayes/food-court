@@ -24,11 +24,20 @@ function index() {
       return;
     }
 
-    fetch(`http://localhost:3000/api/users?email=${email}&password=${password}`)
+    fetch(`http://localhost:3000/api/users/login`, {
+      method: "POST",
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify({
+        email: email,
+        password: password
+      })
+    })
       .then(res => res.json())
       .then(data => {
         if (data.success) {
-          // toast.success("Login successful");
+          toast.success("Login successful");
           localStorage.setItem('email', email);
           router.push('/')
         } else {

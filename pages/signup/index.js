@@ -3,8 +3,11 @@ import Link from 'next/link'
 import { Footer } from '../../components/Footer/Footer'
 import { Navbar } from '../../components/Navbar/Navbar'
 import { toast } from 'react-toastify';
+import { useRouter } from 'next/router'
+
 
 function index() {
+    const router = useRouter()
     const handleRegister = e => {
         e.preventDefault();
 
@@ -53,6 +56,7 @@ function index() {
             .then(data => {
                 if (data.success) {
                     toast.update(toastify, { render: "Registration successful", type: "success", isLoading: false });
+                    router.push('/login')
                 } else {
                     toast.update(toastify, { render: "Registration Failed", type: "error", isLoading: false });
                 }
