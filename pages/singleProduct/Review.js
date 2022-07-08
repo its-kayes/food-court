@@ -15,12 +15,12 @@ const Review = () => {
             </div>
             <hr className='my-8' />
             <form>
-               <div className='md:flex grid justify-between gap-6'>
-               <input type="text" placeholder="Type here" class="p-4 rounded-md  w-full max-w-xs outline-none bg-[#faf7f2]" />
-                <input type="text" placeholder="Type here" class="p-4 rounded-md  w-full max-w-xs outline-none bg-[#faf7f2]" />
-               </div>
-               <textarea placeholder='Review' className='bg-[#faf7f2] p-6 outline-none mt-4 ' name="" id="" cols="78" rows="5"></textarea>
-               <input class="btn btn-error bg-[#ce2829] text-white font-bold w-[200px] mt-4" type="submit" value="Submit" />
+                <div className='md:flex grid justify-between gap-6'>
+                    <input type="text" placeholder="Type here" className="p-4 rounded-md  w-full max-w-xs outline-none bg-[#faf7f2]" />
+                    <input type="text" placeholder="Type here" className="p-4 rounded-md  w-full max-w-xs outline-none bg-[#faf7f2]" />
+                </div>
+                <textarea placeholder='Review' className='bg-[#faf7f2] p-6 outline-none mt-4 ' name="" id="" cols="78" rows="5"></textarea>
+                <input className="btn btn-error bg-[#ce2829] text-white font-bold w-[200px] mt-4" type="submit" value="Submit" />
             </form>
         </div>
     );

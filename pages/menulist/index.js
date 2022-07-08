@@ -12,10 +12,10 @@ export const getStaticProps = async () => {
 
 function index({ items }) {
 
-
+    console.log(items);
     return (
         <>
-        <Navbar> </Navbar>
+            <Navbar> </Navbar>
             <div className={image}>
                 <p className='text-3xl  text-center awesome-title text-red-600 pt-5'>Our signature</p>
                 <h1 className='text-5xl text-center font-semibold my-4'>Food Court Main Dishes</h1>
@@ -27,15 +27,15 @@ function index({ items }) {
                         items.map(item =>
 
 
-                            <div class="card card-side">
+                            <div key={item.id} className="card card-side">
 
-                                <figure><img className={itemImg} src={item.img} alt="aa"  ></img></figure>
-                                <div class="card-body">
+                                <figure><img  className={itemImg} src={item.img} alt="aa"  ></img></figure>
+                                <div className="card-body">
                                     <h2 className="text-center text-2xl font-medium ">{item.name}</h2>
                                     <p className='text-lg text-center my-2 text-gray-400'>Pizza is a savory dish of Italian origin consisting of a usually round, flattened base of leavened.</p>
                                     <p className="text-center text-xl font-semibold">${item.price}</p>
-                                    <div class="card-actions justify-center">
-                                        <button class="btn btn-primary font-bold">ADD TO CART</button>
+                                    <div className="card-actions justify-center">
+                                        <button className="btn btn-primary font-bold">ADD TO CART</button>
                                     </div>
                                 </div>
 

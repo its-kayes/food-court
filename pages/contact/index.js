@@ -29,8 +29,8 @@ const index = () => {
                 </div>
                 <div className=''>
                     <div className='flex'>
-                        <input type="text" placeholder="Your Name" class="font-semibold mx-5 my-10 h-16 input w-full max-w-xs" />
-                        <input type="email" placeholder="Your Email" class="font-semibold mx-5 my-10 h-16 input w-full max-w-xs" />
+                        <input type="text" placeholder="Your Name" className="font-semibold mx-5 my-10 h-16 input w-full max-w-xs" />
+                        <input type="email" placeholder="Your Email" className="font-semibold mx-5 my-10 h-16 input w-full max-w-xs" />
                     </div>
                     <div>
                         <textarea

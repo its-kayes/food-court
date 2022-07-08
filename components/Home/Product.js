@@ -1,7 +1,8 @@
 import React from 'react';
 import Image from 'next/image'
 import { AiOutlineShoppingCart } from 'react-icons/ai'
-import Rating from './rating';
+import Rating from "./Rating";
+// import Rating from './rating';
 
 const Product = ({ product }) => {
     const { title, img, status, price, rating, desc, _id } = product;
@@ -36,19 +37,19 @@ const Product = ({ product }) => {
 
                         </div>
 
-                        <p class="text-sm">{desc}</p>
+                        <p className="text-sm">{desc}</p>
                         <div className="ratings flex items-center my-4">
                             <h2>Rating: </h2>
                             <div className='flex items-center ml-5'>
                                 <Rating rating={rating} ></Rating>
                             </div>
                         </div>
-                        <div class="mt-3 flex justify-between items-center">
+                        <div className="mt-3 flex justify-between items-center">
                             <div>
-                                <span class="font-bold text-xl">{price}</span>&nbsp;<span class="text-sm font-semibold">BDT</span>
+                                <span className="font-bold text-xl">{price}</span>&nbsp;<span className="text-sm font-semibold">BDT</span>
                             </div>
                             <div>
-                                <button onClick={() => addToCart(_id)} class="btn btn-sm text-white"><AiOutlineShoppingCart className='mr-3' /> Add to Cart</button>
+                                <button onClick={() => addToCart(_id)} className="btn btn-sm text-white"><AiOutlineShoppingCart className='mr-3' /> Add to Cart</button>
                             </div>
                         </div>
                     </div>

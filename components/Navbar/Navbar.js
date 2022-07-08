@@ -35,9 +35,9 @@ export const Navbar = () => {
                         {/* <li tabindex="0">
                             <a>
                                 Parent
-                                <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
+                                <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
                             </a>
-                            <ul class="p-2 bg-base-100">
+                            <ul className="p-2 bg-base-100">
                                 <li><a>Submenu 1</a></li>
                                 <li><a>Submenu 2</a></li>
                             </ul>
@@ -63,12 +63,12 @@ export const Navbar = () => {
                                 {menuItems}
                             </ul>
                         </li> */}
-                        <li tabindex="0">
+                        <li tabIndex="0">
                             <a>
                                 <p className='font-semibold'> PAGES </p>
-                                <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
+                                <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
                             </a>
-                            <ul class="p-2 bg-base-100">
+                            <ul className="p-2 bg-base-100">
                                 <li><Link href='/blogs' className='font-semibold'>Blogs</Link></li>
                                 <li><Link href='/menu' className='font-semibold'>Menu</Link></li>
                                 <li><Link href='/menulist' className='font-semibold'>Menu List</Link></li>
@@ -89,7 +89,7 @@ export const Navbar = () => {
                     </div>
                     {
                         user ?
-                        <li><Link href='/login'><p className='font-semibold'>LOGIN</p></Link></li>
+                            <li><Link href='/login'><p className='font-semibold'>LOGIN</p></Link></li>
                             :
                             <div className='flex justify-between items-center'>
                                 <img src="https://i.ibb.co/r47stft/shopping-cart.png" alt="img" />
