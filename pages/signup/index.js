@@ -60,7 +60,6 @@ function index() {
                 } else {
                     toast.update(toastify, { render: "Registration Failed", type: "error", isLoading: false });
                 }
-                console.log(data)
                 setTimeout(() => {
                     toast.dismiss(toastify)
                 }, 2000)
