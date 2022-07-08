@@ -6,7 +6,7 @@ import { toast } from 'react-toastify';
 import { useRouter } from 'next/router'
 
 
-function Index() {
+function index() {
   const router = useRouter()
   const handleLogin = e => {
     e.preventDefault();
@@ -24,9 +24,16 @@ function Index() {
       return;
     }
 
-
-
-    fetch(`http://localhost:3000/api/users?email=${email}&password=${password}`)
+    fetch(`http://localhost:3000/api/users/login`, {
+      method: "POST",
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify({
+        email: email,
+        password: password
+      })
+    })
       .then(res => res.json())
       .then(data => {
         if (data.success) {
@@ -74,4 +81,4 @@ function Index() {
 
 
 
-export default Index
+export default index
