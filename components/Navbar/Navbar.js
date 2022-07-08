@@ -1,9 +1,13 @@
 import Link from 'next/link'
 import React from 'react'
+import useUser from '../../hooks/useUser'
 
 export const Navbar = () => {
 
-    let user = true
+    const { user } = useUser();
+    // console.log(user)
+    let userData = user?.email;
+    console.log(userData)
 
 
     const menuItems = <>
@@ -87,16 +91,26 @@ export const Navbar = () => {
                         <img src="https://i.ibb.co/XJ25pnr/phone.png" alt="img" />
                         <p className='ml-4 font-semibold'>+99 097452715</p>
                     </div>
-                    {
-                        user ?
+                    {/* {
+                        userData ?
                             <li><Link href='/login'><p className='font-semibold'>LOGIN</p></Link></li>
                             :
                             <div className='flex justify-between items-center'>
                                 <img src="https://i.ibb.co/r47stft/shopping-cart.png" alt="img" />
                                 <p className='ml-3 font-semibold'>45.67 $</p>
                             </div>
-                    }
+                    } */}
 
+                    {
+                        userData ?
+                            <div className='flex justify-between items-center'>
+                                <img src="https://i.ibb.co/r47stft/shopping-cart.png" alt="img" />
+                                <p className='ml-3 font-semibold'>45.67 $</p>
+                            </div>
+                            :
+
+                            <li><Link href='/login'><p className='font-semibold'>LOGIN</p></Link></li>
+                    }
                 </ul>
 
             </div>
