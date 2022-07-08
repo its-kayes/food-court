@@ -8,19 +8,30 @@ const useUser = () => {
     let email = '';
     if (!ISSERVER) {
         email = localStorage.getItem('email')
-        if (!email) {
-            router.push('/')
-        }
-        useEffect(() => {
-            fetch(`http://localhost:3000/api/users?email=${email}`)
-                .then(res => res.json())
-                .then(data => {
-                    if (data.success) {
-                        setUser(data.user)
-                    }
-                })
-        }, [email])
+        // if (!email) {
+        //     router.push('/')
+        // }
+        // useEffect(() => {
+        //     fetch(`http://localhost:3000/api/users?email=${email}`)
+        //         .then(res => res.json())
+        //         .then(data => {
+        //             if (data.success) {
+        //                 setUser(data.user)
+        //             }
+        //         })
+        // }, [email])
     }
+
+    // let email = localStorage.getItem('email')
+    useEffect(() => {
+        fetch(`http://localhost:3000/api/users?email=${email}`)
+            .then(res => res.json())
+            .then(data => {
+                if (data.success) {
+                    setUser(data.user)
+                }
+            })
+    }, [email])
 
     return { user };
 };

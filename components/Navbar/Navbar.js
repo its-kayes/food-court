@@ -5,9 +5,10 @@ import useUser from '../../hooks/useUser'
 export const Navbar = () => {
 
     const { user } = useUser();
-    // console.log(user)
-    let userData = user?.email;
-    console.log(userData)
+    
+    // console.log(user.email)
+    let email = user?.email;
+    // console.log(userData)
 
 
     const menuItems = <>
@@ -102,7 +103,7 @@ export const Navbar = () => {
                     } */}
 
                     {
-                        userData ?
+                        email ?
                             <div className='flex justify-between items-center'>
                                 <img src="https://i.ibb.co/r47stft/shopping-cart.png" alt="img" />
                                 <p className='ml-3 font-semibold'>45.67 $</p>
