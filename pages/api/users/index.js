@@ -14,7 +14,7 @@ export default async function handler(req, res) {
             query = req.query
         }
         try {
-            const user = await User.find(query);
+            const user = await User.findOne(query);
             res.send({ user, success: true });
 
         } catch (error) {
