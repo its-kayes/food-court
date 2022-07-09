@@ -12,6 +12,7 @@ const SingleProduct = () => {
     const [description, setDescription] = useState(true);
     const [information, setInformation] = useState(false);
     const [reviews, setReviews] = useState(false);
+    let [size, setSize] = useState(0);
     console.log('des', description, 'inf', information, 'rev', reviews)
 
 
@@ -35,6 +36,8 @@ const SingleProduct = () => {
                             <h1 className='text-5xl'>Maxican Pizza Test Better</h1>
                             <div className='flex justify-between items-center'>
                                 <p className='text-2xl font-bold'>$27.00</p>
+                                {/* <p className='text-2xl font-bold'>${data.price[size]}</p> */}
+
                                 <div className='flex items-center my-12'>
                                     <p className='flex items-center'><span>4.9</span> <FaStar className='text-[#d80027]' /></p>
                                     <FaStar className='text-[#d80027]' /><FaStar className='text-[#d80027]' /><FaStar className='text-[#d80027]' />
@@ -47,13 +50,13 @@ const SingleProduct = () => {
                                 <div>
                                     <p className='text-2xl font-semibold mb-6'>Select Size</p>
                                     <div className='grid lg:w-3/4 grid-cols-1 gap-4 md:grid-cols-3'>
-                                        <button className="btn btn-circle bg-[#faf7f2] border-0 text-red-600 hover:bg-red-500 hover:text-white font-bold">
+                                        <button onClick={() => setSize(0)} className="btn btn-circle bg-[#faf7f2] border-0 text-red-600 hover:bg-red-500 hover:text-white font-bold">
                                             10
                                         </button>
-                                        <button className="btn btn-circle bg-[#faf7f2] border-0 text-red-600 hover:bg-red-500 hover:text-white font-bold">
+                                        <button onClick={() => setSize(1)} className="btn btn-circle bg-[#faf7f2] border-0 text-red-600 hover:bg-red-500 hover:text-white font-bold">
                                             12
                                         </button>
-                                        <button className="btn btn-circle bg-[#faf7f2] border-0 text-red-600 hover:bg-red-500 hover:text-white font-bold">
+                                        <button onClick={() => setSize(2)} className="btn btn-circle bg-[#faf7f2] border-0 text-red-600 hover:bg-red-500 hover:text-white font-bold">
                                             14
                                         </button>
                                     </div>

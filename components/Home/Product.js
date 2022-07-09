@@ -2,9 +2,14 @@ import React from 'react';
 import Image from 'next/image'
 import { AiOutlineShoppingCart } from 'react-icons/ai'
 import Rating from "./Rating";
+import { useRouter } from 'next/router'
+
 // import Rating from './rating';
 
 const Product = ({ product }) => {
+
+    const router = useRouter()
+
     const { title, img, status, price, rating, desc, _id } = product;
     const addToCart = (id) => {
         const quantity = 1;
@@ -48,8 +53,11 @@ const Product = ({ product }) => {
                             <div>
                                 <span className="font-bold text-xl">{price}</span>&nbsp;<span className="text-sm font-semibold">BDT</span>
                             </div>
-                            <div>
+                            {/* <div>
                                 <button onClick={() => addToCart(_id)} className="btn btn-sm text-white"><AiOutlineShoppingCart className='mr-3' /> Add to Cart</button>
+                            </div> */}
+                            <div>
+                                <button onClick={() => router.push(`/singleproduct/${_id}`)} className="btn btn-sm text-white"><AiOutlineShoppingCart className='mr-3' /> Add to Cart</button>
                             </div>
                         </div>
                     </div>
