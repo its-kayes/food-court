@@ -5,16 +5,26 @@ import { Navbar } from '../../components/Navbar/Navbar';
 import Description from './Description';
 import Information from './Information';
 import Review from './Review';
+import { useRouter } from 'next/router'
+import { useQuery } from 'react-query';
+
 
 const SingleProduct = () => {
+    
+    const router = useRouter()
+    const { id } = router.query;
 
     const [quantity, setQuantity] = useState(1);
     const [description, setDescription] = useState(true);
     const [information, setInformation] = useState(false);
     const [reviews, setReviews] = useState(false);
     let [size, setSize] = useState(0);
-    console.log('des', description, 'inf', information, 'rev', reviews)
+    // console.log('des', description, 'inf', information, 'rev', reviews)
+    console.log(id);
 
+    let {data: product} = useQuery('singleproduct', ()=> fetch(`http://localhost:3000/api?singleproduct=${id}`).then(res => res.json()))
+
+    console.log(product);
 
     return (
         <>
