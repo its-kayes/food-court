@@ -7,6 +7,7 @@ import Information from './Information';
 import Review from './Review';
 import { useRouter } from 'next/router'
 import { useQuery } from 'react-query';
+import Loader from '../../components/Loader/Loader';
 
 
 const SingleProduct = () => {
@@ -22,9 +23,22 @@ const SingleProduct = () => {
     // console.log('des', description, 'inf', information, 'rev', reviews)
     console.log(id);
 
-    let {data: product} = useQuery('singleproduct', ()=> fetch(`http://localhost:3000/api?singleproduct=${id}`).then(res => res.json()))
+    let {data: product, isLoading, refetch} = useQuery('singleproduct', ()=> fetch(`http://localhost:3000/api/singleproduct?id=${id}`).then(res => res.json()))
 
-    console.log(product);
+
+    if (isLoading) {
+        return <Loader> </Loader>
+    }
+    
+
+    if (product?.products === false) {
+        refetch();
+    }
+    // let item = product.products;
+
+    // console.log(product);
+    // console.log(product?.products.title);
+    // console.log(item);
 
     return (
         <>
@@ -43,7 +57,8 @@ const SingleProduct = () => {
                             </div>
                         </div>
                         <div className='lg:w-3/4 scroll-my-80'>
-                            <h1 className='text-5xl'>Maxican Pizza Test Better</h1>
+                            {/* <h1 className='text-5xl'>Maxican Pizza Test Better</h1> */}
+                            <h1 className='text-5xl'>{product?.products.title}</h1>
                             <div className='flex justify-between items-center'>
                                 <p className='text-2xl font-bold'>$27.00</p>
                                 {/* <p className='text-2xl font-bold'>${data.price[size]}</p> */}

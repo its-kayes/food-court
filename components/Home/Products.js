@@ -2,24 +2,38 @@ import React, { useEffect, useState } from 'react';
 import Image from 'next/image'
 import Link from 'next/link'
 import Product from './Product';
+import { useQuery } from 'react-query';
+import Loader from '../Loader/Loader';
 
 const Products = () => {
 
-    const [products, setProducts] = useState([])
-    const [isLoading, setLoading] = useState(false)
+    // const [products, setProducts] = useState([])
+    // const [isLoading, setLoading] = useState(false)
 
-    useEffect(() => {
-        setLoading(true)
-        fetch('http://localhost:3000/api/product')
-            .then(res => res.json())
-            .then(data => {
-                setProducts(data.products)
-                setLoading(false)
-            })
-    }, [])
+    let {data, isLoading, refetch} = useQuery('products', ()=> fetch('http://localhost:3000/api/product').then(res => res.json()))
 
-    if (isLoading) return <p className='text-center'>Products Loading...</p>
-    if (!products) return <p>No profile data</p>
+    if(isLoading) {
+        return <Loader> </Loader>
+    }
+
+    let products = data.products
+
+    console.log(products);
+
+    // setProducts(data.products);
+
+    // useEffect(() => {
+    //     setLoading(true)
+    //     fetch('http://localhost:3000/api/product')
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             setProducts(data.products)
+    //             setLoading(false)
+    //         })
+    // }, [])
+
+    // if (isLoading) return <p className='text-center'>Products Loading...</p>
+    // if (!products) return <p>No profile data</p>
 
     return (
         <div className='px-10'>
