@@ -5,7 +5,7 @@ import useUser from '../../hooks/useUser'
 export const Navbar = () => {
 
     const { user } = useUser();
-    
+
     // console.log(user.email)
     let email = user?.email;
     // console.log(userData)
@@ -24,7 +24,7 @@ export const Navbar = () => {
                     <label tabIndex="0" className="btn btn-ghost lg:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                     </label>
-                    <ul tabIndex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                    <ul tabIndex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 lg:hidden">
                         <li><Link href='/'><p className='font-semibold'>HOME</p></Link></li>
                         <li><Link href='/menu'><p className='font-semibold'>FOODS</p></Link></li>
                         <li tabIndex="0">
@@ -32,7 +32,7 @@ export const Navbar = () => {
                                 PAGES
                                 <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
                             </a>
-                            <ul className="p-2">
+                            <ul className="p-2 shadow bg-base-100 m-3">
                                 {menuItems}
                             </ul>
 
@@ -64,7 +64,7 @@ export const Navbar = () => {
                                 PAGES
                                 <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
                             </a>
-                            <ul className="p-2 bg-slate-200">
+                            <ul className="p-2 shadow bg-base-100">
                                 {menuItems}
                             </ul>
                         </li> */}
@@ -73,7 +73,7 @@ export const Navbar = () => {
                                 <p className='font-semibold'> PAGES </p>
                                 <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
                             </a>
-                            <ul className="p-2 bg-base-100">
+                            <ul className="p-2 bg-base-100 shadow z-50">
                                 <li><Link href='/blogs' className='font-semibold'>Blogs</Link></li>
                                 <li><Link href='/menu' className='font-semibold'>Menu</Link></li>
                                 <li><Link href='/menulist' className='font-semibold'>Menu List</Link></li>

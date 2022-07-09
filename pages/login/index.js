@@ -6,7 +6,7 @@ import { toast } from 'react-toastify';
 import { useRouter } from 'next/router'
 
 
-function index() {
+function Index() {
   const router = useRouter()
   const handleLogin = e => {
     e.preventDefault();
@@ -81,4 +81,4 @@ function index() {
 
 
 
-export default index
+export default Index
