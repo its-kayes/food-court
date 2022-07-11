@@ -22,21 +22,22 @@ const SingleProduct = () => {
     const [information, setInformation] = useState(false);
     const [reviews, setReviews] = useState(false);
     let [size, setSize] = useState(0);
+    let [totalPrice, setTotalPrice] = useState(0);
     // console.log('des', description, 'inf', information, 'rev', reviews)
     console.log(_id);
     
 
     let {data, isLoading, refetch} = useQuery('singleproduct', ()=> fetch(`http://localhost:3000/api/singleproduct?id=${id.id}`).then(res => res.json()))
 
-    if(!_id) {
-        return <Loader> </Loader>
-    }
+    // if(!_id) {
+    //     return <Loader> </Loader>
+    // }
 
     if (isLoading) {
         return <Loader> </Loader>
         refetch();
     }
-    
+    // setTotalPrice(product?.price);
 
     // if (product?.products === true) {
         
@@ -45,9 +46,17 @@ const SingleProduct = () => {
 
     let product = data?.products;
 
-    console.log(product);
+    console.log(totalPrice);
     // console.log(product?.products.title);
     // console.log(item);
+
+
+    let addToCart = event => {
+        // event.preventDefault();
+
+        console.log(event);
+    }
+
 
     return (
         <>
@@ -96,7 +105,7 @@ const SingleProduct = () => {
                                         </button>
                                     </div>
                                 </div>
-                                <div>
+                                {/* <div>
                                     <p className='text-2xl  font-semibold'> Select Crust</p>
                                     <select className="border-0 focus:border-0  bg-[#faf7f2] mt-6 select select-bordered w-full max-w-xs">
                                         <option disabled selected>-Choose Your Size-</option>
@@ -104,21 +113,26 @@ const SingleProduct = () => {
                                         <option>Burger</option>
                                         <option>Ramen</option>
                                     </select>
+                                </div> */}
+                                <div>
+                                    <p className='text-2xl  font-semibold'> Total Cost</p>
+                                    <input type="number" name="totalPrice" id="" value={ quantity * product?.price } className="border-0 rounded-full focus:border-0 bg-[#faf7f2] mt-6 h-10 select-bordered w-2/4 font-bold text-red-600 text-center max-w-xs"  />
                                 </div>
                             </div>
 
-                            <div className='flex items-center mt-12 '>
+                            <div onClick={()=> addToCart(quantity * product?.price)} className='flex items-center mt-12 '>
                                 <div className='w-2/4 flex   items-center  '>
                                     <button onClick={() => {
                                         if (quantity >= 2) {
                                             setQuantity(quantity - 1)
                                         }
-                                    }} className='p-3 bg-[#faf7f2]'>-</button>
-                                    <input value={quantity} className=' w-1/4 text-center p-3 bg-[#faf7f2]' type="number" name="quantity" id="" />
-                                    <button onClick={() => setQuantity(quantity + 1)} className='p-3 bg-[#faf7f2]'>+</button>
+                                    }} className='p-3 bg-[#faf7f2] font-bold'>-</button>
+                                    <input value={quantity} className=' font-bold w-1/4 text-center p-3 bg-[#faf7f2]' type="number" name="quantity" id="" />
+                                    <button onClick={() => setQuantity(quantity + 1)} className='p-3 bg-[#faf7f2] font-bold'>+</button>
                                 </div>
-                                <button className="btn btn-warning  p-1 font-bold w-[200px]">ADD TO CART</button>
+                                <button type='submit' className="btn btn-warning  p-1 font-bold w-[200px]">ADD TO CART</button>
                             </div>
+                            {/* <p> Total Price:- { quantity * product?.price } </p> */}
 
                             <hr className='my-6' />
                             <div className='text-gray-400'>
