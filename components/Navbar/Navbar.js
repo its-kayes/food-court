@@ -5,7 +5,7 @@ import useUser from '../../hooks/useUser'
 export const Navbar = () => {
 
     const { user } = useUser();
-    
+
     // console.log(user.email)
     let email = user?.email;
     // console.log(userData)
@@ -54,7 +54,7 @@ export const Navbar = () => {
                         </div>
                     </ul>
                 </div>
-                <a className="text-2xl"><span className='font-bold uppercase'>Food</span><span className='font-bold uppercase text-orange-400'>Court</span></a>
+                <Link href='/'><p> <span className='cursor-pointer text-2xl font-bold uppercase'>Food</span><span className='cursor-pointer text-2xl font-bold uppercase text-orange-400'>Court</span> </p></Link>
                 <div className='hidden lg:flex ml-8'>
                     <ul className="menu menu-horizontal p-0">
                         <li><Link href='/'><p className='font-semibold'>HOME</p></Link></li>

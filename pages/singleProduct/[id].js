@@ -13,7 +13,9 @@ import Loader from '../../components/Loader/Loader';
 const SingleProduct = () => {
     
     const router = useRouter()
-    const { id } = router.query;
+    const id  = router.query;
+    let _id = id.id;
+    
 
     const [quantity, setQuantity] = useState(1);
     const [description, setDescription] = useState(true);
@@ -21,22 +23,29 @@ const SingleProduct = () => {
     const [reviews, setReviews] = useState(false);
     let [size, setSize] = useState(0);
     // console.log('des', description, 'inf', information, 'rev', reviews)
-    console.log(id);
+    console.log(_id);
+    
 
-    let {data: product, isLoading, refetch} = useQuery('singleproduct', ()=> fetch(`http://localhost:3000/api/singleproduct?id=${id}`).then(res => res.json()))
+    let {data, isLoading, refetch} = useQuery('singleproduct', ()=> fetch(`http://localhost:3000/api/singleproduct?id=${id.id}`).then(res => res.json()))
 
+    if(!_id) {
+        return <Loader> </Loader>
+    }
 
     if (isLoading) {
         return <Loader> </Loader>
+        refetch();
     }
     
 
-    if (product?.products === false) {
-        refetch();
-    }
+    // if (product?.products === true) {
+        
+    // }
     // let item = product.products;
 
-    // console.log(product);
+    let product = data?.products;
+
+    console.log(product);
     // console.log(product?.products.title);
     // console.log(item);
 
@@ -58,18 +67,19 @@ const SingleProduct = () => {
                         </div>
                         <div className='lg:w-3/4 scroll-my-80'>
                             {/* <h1 className='text-5xl'>Maxican Pizza Test Better</h1> */}
-                            <h1 className='text-5xl'>{product?.products.title}</h1>
+                            <h1 className='text-5xl'>{product?.title}</h1>
                             <div className='flex justify-between items-center'>
-                                <p className='text-2xl font-bold'>$27.00</p>
+                                <p className='text-2xl font-bold'>${product?.price}</p>
                                 {/* <p className='text-2xl font-bold'>${data.price[size]}</p> */}
 
                                 <div className='flex items-center my-12'>
-                                    <p className='flex items-center'><span>4.9</span> <FaStar className='text-[#d80027]' /></p>
-                                    <FaStar className='text-[#d80027]' /><FaStar className='text-[#d80027]' /><FaStar className='text-[#d80027]' />
+                                    <p className='flex items-center'><span>{product?.rating}</span> <FaStar className='text-[#d80027]' /></p>
+                                    <FaStar className='text-[#d80027]' /><FaStar className='text-[#d80027]' />
                                     <p> <FaStarHalf className='text-[#d80027]' /></p>
                                 </div>
                             </div>
-                            <p>Pizza is a savory dish of Italian origin consisting of a usually round, flattened base of leavened wheat-based dough topped with tomatoes, cheese, and often various other ingredients, which is then baked at a high temperature, traditionally in a wood-fired oven. A small pizza is sometimes called a pizzetta.</p>
+                            {/* <p>Pizza is a savory dish of Italian origin consisting of a usually round, flattened base of leavened wheat-based dough topped with tomatoes, cheese, and often various other ingredients, which is then baked at a high temperature, traditionally in a wood-fired oven. A small pizza is sometimes called a pizzetta.</p> */}
+                            <p> {product?.desc} </p>
 
                             <div className='grid grid-cols-2 mt-8'>
                                 <div>
@@ -104,7 +114,7 @@ const SingleProduct = () => {
                                             setQuantity(quantity - 1)
                                         }
                                     }} className='p-3 bg-[#faf7f2]'>-</button>
-                                    <input defaultValue={quantity} className=' w-1/4 text-center p-3 bg-[#faf7f2]' type="number" name="quantity" id="" />
+                                    <input value={quantity} className=' w-1/4 text-center p-3 bg-[#faf7f2]' type="number" name="quantity" id="" />
                                     <button onClick={() => setQuantity(quantity + 1)} className='p-3 bg-[#faf7f2]'>+</button>
                                 </div>
                                 <button className="btn btn-warning  p-1 font-bold w-[200px]">ADD TO CART</button>
