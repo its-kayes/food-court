@@ -1,38 +1,27 @@
 import React from 'react'
 import Image from 'next/image';
 import { ImCross } from 'react-icons/im';
-import {
-    useQuery,
-    useMutation,
-    useQueryClient,
-    QueryClient,
-    QueryClientProvider,
-    QueryCache,
-    ReactQueryCacheProvider,
-
-} from 'react-query'
-
-
-
-// const queryClient = new QueryClient();
-const queryCache = new QueryCache();
-
+import { useQuery } from 'react-query'
+import Loader from '../Loader/Loader';
+import useUser from '../../hooks/useUser';
 
 export const CartList = () => {
 
+    let  user  = useUser();
 
-
-    // let { data: orders } = useQuery('orders', fetch('http://localhost:3000/api/orders').then(res => res.json()));
-
-    let { data: order, isLoading } = useQuery("orders", () =>
-        fetch("http://localhost:3000/api/orders").then((res) => res.json())
+    let { data, isLoading } = useQuery("orders", () =>
+        fetch(`http://localhost:3000/api/orders?email=${user.email}`).then((res) => res.json())
     );
 
-    console.log(order);
+    if (isLoading) {
+        return <Loader> </Loader>
+    }
+    console.log(user.email);
+    console.log(data.Orders);
+    let totalOrder = data.Orders;
 
     return (
-        // <QueryClientProvider client={queryClient}>
-        // <ReactQueryCacheProvider queryCache={queryCache}>
+
         <div className='mt-24 mx-5 lg:mx-24 '>
             <div className="overflow-x-auto">
                 <table className="table w-full text-xl">
@@ -41,41 +30,48 @@ export const CartList = () => {
                             <th className='bg-[#F6F1E7] decoration-none'></th>
                             <th className='bg-[#F6F1E7] dec text-lg'>Image</th>
                             <th className='bg-[#F6F1E7] text-lg'>Products</th>
-                            <th className='bg-[#F6F1E7] text-lg'>Price</th>
                             <th className='bg-[#F6F1E7] text-lg'>Quantity</th>
                             <th className='bg-[#F6F1E7] text-lg'>Total Price</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td> <ImCross /> </td>
-                            <td>
-                                <Image height={`100`} width={`100`} src={`https://themefie.com/html/foodka/assets/img/widget/01.png`} alt="img" />
-                            </td>
-                            <td>
-                                <div>
-                                    <h5>All Season Gulliver Pizza</h5>
-                                    <ul>
-                                        <li><span>Select Size: </span>Large</li>
-                                        <li><span>Select Crust: </span>Double Crust</li>
-                                    </ul>
-                                </div>
-                            </td>
-                            <td>$50.00 </td>
-                            <td className="p-4 px-6 text-center whitespace-nowrap">
-                                <div>
-                                    <button className="px-2 py-0 shadow">-</button>
-                                    <input
-                                        type="text"
-                                        name="qty"
-                                        value="1"
-                                        className="w-12 text-center bg-gray-100 outline-none"
-                                    />
-                                    <button className="px-2 py-0 shadow">+</button>
-                                </div>
-                            </td>
-                            <td>$50.00</td>
-                        </tr>
+                        {
+                            totalOrder.map(order => <tr key={order._id}>
+                                <td> <ImCross /> </td>
+                                <td>
+                                    <Image height={`100`} width={`100`} src={`https://themefie.com/html/foodka/assets/img/widget/01.png`} alt="img" />
+                                    {/* <Image height={`100`} width={`100`} src={order.img} alt="img" /> */}
+                                </td>
+                                <td>
+                                    <div>
+                                        <h5 className='font-semibold'>{order.name}</h5>
+                                        <ul>
+                                            <li><span>Select Size: {  
+                                                order.size === 10 
+                                                ? 
+                                                "Small"
+                                                :
+                                                "Big"
+                                            } </span>Large</li>
+                                            <li><span>Select Crust: </span>Double Crust</li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td className="p-4 px-6 whitespace-nowrap">
+                                    <div>
+                                        {/* <button className="px-2 py-0 shadow">-</button> */}
+                                        <input
+                                            type="text"
+                                            name="qty"
+                                            defaultValue={order.quantity}
+                                            className="w-12 text-center bg-gray-100 outline-none"
+                                        />
+                                        {/* <button className="px-2 py-0 shadow">+</button> */}
+                                    </div>
+                                </td>
+                                <td>$ {order.totalPrice}</td>
+                            </tr>)
+                        }
                     </tbody>
                 </table>
             </div>

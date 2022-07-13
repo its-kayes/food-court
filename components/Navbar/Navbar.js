@@ -4,7 +4,9 @@ import useUser from '../../hooks/useUser'
 
 export const Navbar = () => {
 
-    const { user } = useUser();
+    // const { user } = useUser();
+    const user = useUser();
+
 
     // console.log(user.email)
     let email = user?.email;
@@ -80,7 +82,7 @@ export const Navbar = () => {
                                 <li><Link href='/shop' className='font-semibold'>Shop</Link></li>
                             </ul>
                         </li>
-                        <li><Link href='/cart'><p className='font-semibold'>CART</p></Link></li>
+                        {/* <li><Link href='/cart'><p className='font-semibold'>CART</p></Link></li> */}
                         <li><Link href='/about'><p className='font-semibold'>ABOUT</p></Link></li>
                         <li><Link href='/contact'><p className='font-semibold'>CONTACT</p></Link></li>
                     </ul>
@@ -104,12 +106,11 @@ export const Navbar = () => {
 
                     {
                         email ?
-                            <div className='flex justify-between items-center'>
+                            <li><Link href='/cart'><div>
                                 <img src="https://i.ibb.co/r47stft/shopping-cart.png" alt="img" />
-                                <p className='ml-3 font-semibold'>45.67 $</p>
-                            </div>
+                                <p className='font-semibold'>$99+ </p>
+                            </div></Link></li>
                             :
-
                             <li><Link href='/login'><p className='font-semibold'>LOGIN</p></Link></li>
                     }
                 </ul>

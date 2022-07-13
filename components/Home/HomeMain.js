@@ -7,7 +7,7 @@ import Products from './Products'
 import { WhyChooseUs } from './WhyChooseUs'
 
 export const HomeMain = () => {
-  const { user } = useUser();
+  const user  = useUser();
   console.log(user)
   return (
     <div>

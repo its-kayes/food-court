@@ -23,7 +23,9 @@ const SingleProduct = () => {
     const [information, setInformation] = useState(false);
     const [reviews, setReviews] = useState(false);
     let [size, setSize] = useState(0);
-    let { user } = useUser();
+    // let { user } = useUser();
+    let user  = useUser();
+
     // let [totalPrice, setTotalPrice] = useState(0);
 
     // console.log('des', description, 'inf', information, 'rev', reviews)
