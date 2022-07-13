@@ -8,26 +8,29 @@ import Review from './Review';
 import { useRouter } from 'next/router'
 import { useQuery } from 'react-query';
 import Loader from '../../components/Loader/Loader';
+import useUser from '../../hooks/useUser';
 
 
 const SingleProduct = () => {
-    
+
     const router = useRouter()
-    const id  = router.query;
+    const id = router.query;
     let _id = id.id;
-    
+
 
     const [quantity, setQuantity] = useState(1);
     const [description, setDescription] = useState(true);
     const [information, setInformation] = useState(false);
     const [reviews, setReviews] = useState(false);
     let [size, setSize] = useState(0);
-    let [totalPrice, setTotalPrice] = useState(0);
-    // console.log('des', description, 'inf', information, 'rev', reviews)
-    console.log(_id);
-    
+    let { user } = useUser();
+    // let [totalPrice, setTotalPrice] = useState(0);
 
-    let {data, isLoading, refetch} = useQuery('singleproduct', ()=> fetch(`http://localhost:3000/api/singleproduct?id=${id.id}`).then(res => res.json()))
+    // console.log('des', description, 'inf', information, 'rev', reviews)
+    console.log(user);
+
+
+    let { data, isLoading, refetch } = useQuery('singleproduct', () => fetch(`http://localhost:3000/api/singleproduct?id=${id.id}`).then(res => res.json()))
 
     // if(!_id) {
     //     return <Loader> </Loader>
@@ -40,21 +43,41 @@ const SingleProduct = () => {
     // setTotalPrice(product?.price);
 
     // if (product?.products === true) {
-        
+
     // }
     // let item = product.products;
 
     let product = data?.products;
 
-    console.log(totalPrice);
+    // console.log(totalPrice);
     // console.log(product?.products.title);
     // console.log(item);
 
 
-    let addToCart = event => {
+    let addToCart = (name, img, quantity, price) => {
         // event.preventDefault();
 
-        console.log(event);
+        let data = {
+            totalPrice: (quantity * price),
+            email: user.email,
+            quantity: quantity,
+            name: name,
+            img: img,
+            size: 10
+        }
+        console.log(data);
+
+
+        fetch("http://localhost:3000/api/orders", {
+            method: "POST",
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(result => console.log(result));
+
     }
 
 
@@ -116,11 +139,11 @@ const SingleProduct = () => {
                                 </div> */}
                                 <div>
                                     <p className='text-2xl  font-semibold'> Total Cost</p>
-                                    <input type="number" name="totalPrice" id="" value={ quantity * product?.price } className="border-0 rounded-full focus:border-0 bg-[#faf7f2] mt-6 h-10 select-bordered w-2/4 font-bold text-red-600 text-center max-w-xs"  />
+                                    <input type="number" name="totalPrice" id="" value={quantity * product?.price} className="border-0 rounded-full focus:border-0 bg-[#faf7f2] mt-6 h-10 select-bordered w-2/4 font-bold text-red-600 text-center max-w-xs" />
                                 </div>
                             </div>
 
-                            <div onClick={()=> addToCart(quantity * product?.price)} className='flex items-center mt-12 '>
+                            <div onClick={() => addToCart(product?.title, product?.img, quantity, product?.price)} className='flex items-center mt-12 '>
                                 <div className='w-2/4 flex   items-center  '>
                                     <button onClick={() => {
                                         if (quantity >= 2) {
