@@ -24,7 +24,7 @@ const SingleProduct = () => {
     const [reviews, setReviews] = useState(false);
     let [size, setSize] = useState(0);
     // let { user } = useUser();
-    let user  = useUser();
+    let user = useUser();
 
     // let [totalPrice, setTotalPrice] = useState(0);
 
@@ -145,7 +145,7 @@ const SingleProduct = () => {
                                 </div>
                             </div>
 
-                            <div onClick={() => addToCart(product?.title, product?.img, quantity, product?.price)} className='flex items-center mt-12 '>
+                            <div className='flex items-center mt-12 '>
                                 <div className='w-2/4 flex   items-center  '>
                                     <button onClick={() => {
                                         if (quantity >= 2) {
@@ -155,7 +155,7 @@ const SingleProduct = () => {
                                     <input value={quantity} className=' font-bold w-1/4 text-center p-3 bg-[#faf7f2]' type="number" name="quantity" id="" />
                                     <button onClick={() => setQuantity(quantity + 1)} className='p-3 bg-[#faf7f2] font-bold'>+</button>
                                 </div>
-                                <button type='submit' className="btn btn-warning  p-1 font-bold w-[200px]">ADD TO CART</button>
+                                <button onClick={() => addToCart(product?.title, product?.img, quantity, product?.price)} className="btn btn-warning  p-1 font-bold w-[200px]">ADD TO CART</button>
                             </div>
                             {/* <p> Total Price:- { quantity * product?.price } </p> */}
 

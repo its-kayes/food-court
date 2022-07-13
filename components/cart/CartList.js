@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image';
 import { ImCross } from 'react-icons/im';
 import { useQuery } from 'react-query'
@@ -6,8 +6,7 @@ import Loader from '../Loader/Loader';
 import useUser from '../../hooks/useUser';
 
 export const CartList = () => {
-
-    let  user  = useUser();
+    let user = useUser();
 
     let { data, isLoading } = useQuery("orders", () =>
         fetch(`http://localhost:3000/api/orders?email=${user.email}`).then((res) => res.json())
@@ -19,6 +18,14 @@ export const CartList = () => {
     console.log(user.email);
     console.log(data.Orders);
     let totalOrder = data.Orders;
+
+
+    // let setP = 0;
+    // let setV = 0;
+    // setP(...setV + setV)
+    // console.log(setP);
+
+
 
     return (
 
@@ -46,12 +53,12 @@ export const CartList = () => {
                                     <div>
                                         <h5 className='font-semibold'>{order.name}</h5>
                                         <ul>
-                                            <li><span>Select Size: {  
-                                                order.size === 10 
-                                                ? 
-                                                "Small"
-                                                :
-                                                "Big"
+                                            <li><span>Select Size: {
+                                                order.size === 10
+                                                    ?
+                                                    "Small"
+                                                    :
+                                                    "Big"
                                             } </span>Large</li>
                                             <li><span>Select Crust: </span>Double Crust</li>
                                         </ul>
@@ -77,6 +84,11 @@ export const CartList = () => {
             </div>
 
             <div className="my-5 flex flex-col lg:flex-row justify-around pb-10">
+
+                {/* {
+                    totalOrder.map(x => setV(x.totalPrice))
+                } */}
+
                 <div className='flex flex-col lg:flex-row gap-3 my-5 w-full'>
                     <input type="text" placeholder="Coupon Code" className="input w-full lg:w-4/6  h-[56px]" />
                     <button className="btn border-none w-auto font-bold text-lg bg-[#FDCE29] hover:bg-[#FDCE29] h-[56px] rounded-md">APPLY COUPON</button>
@@ -90,6 +102,8 @@ export const CartList = () => {
                         <ul className='text-lg font-semibold'>
                             <li className='my-2'>Subtotal<span className='float-right'>$50.00</span></li>
                             <li className="text-[#CC2829] my-2">Total<span className='float-right'>$50.00</span></li>
+                            <li className="text-[#CC2829] my-2">Total<span className='float-right'>$50.00</span></li>
+
                         </ul>
                     </div>
                     <button className="btn border-none font-bold text-lg bg-[#FDCE29] rounded-t-none w-full overflow-hidden hover:bg-[#FDCE29] h-[56px] ">PROCEED TO CHECKOUT</button>
