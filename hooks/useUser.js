@@ -27,6 +27,7 @@ const useUser = () => {
         //         })
         // }, [email])
     }
+    
 
     // let email = localStorage.getItem('email')
 
@@ -44,7 +45,7 @@ const useUser = () => {
     // let  data  = axios.get(`http://localhost:3000/api/users?email=${email}`) 
     // let user = { data }
 
-    // console.log(user.data)
+    console.log(email)
 
 
     // useEffect(() => {
