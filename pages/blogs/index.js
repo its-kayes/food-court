@@ -9,9 +9,12 @@ import { Navbar } from '../../components/Navbar/Navbar'
 const Index = () => {
   const [foods, setFoods] = useState([])
   useEffect(() => {
-    fetch('food.json')
+    fetch('http://localhost:3000/api/blog')
       .then(res => res.json())
-      .then(data => setFoods(data))
+      .then(data => {
+        console.log(data.blogs);
+        setFoods(data.blogs);
+      })
   }, [])
   console.log(foods);
   return (
@@ -22,7 +25,7 @@ const Index = () => {
         <div className=" item1 col-span-8">
           <div className="grid-container md:grid grid-cols-2 gap-4 p-7">
             {
-              foods.map(food => <Blog key={food.date} food={food}></Blog>)
+              foods.map(food => <Blog key={food._id} food={food}></Blog>)
             }
           </div>
         </div>
@@ -40,7 +43,7 @@ const Index = () => {
               <h1 className='text-2xl font-medium mb-6'>Recent Post</h1>
 
               {
-                foods.map(food => <div key={food.date} food={food} className='flex items-center mb-5'>
+                foods.map(food => <div key={food._id} food={food} className='flex items-center mb-5'>
                   <Image width={60} height={80} className='' src={food.img} alt="" />
                   <h4 className='font-medium p-3 text-lg'>{food.name}</h4>
                 </div>)

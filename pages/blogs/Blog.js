@@ -1,6 +1,6 @@
 import React from 'react'
 
-function index({ food }) {
+function Index({ food }) {
   const { name, img } = food;
   return (
     <div>
@@ -16,4 +16,4 @@ function index({ food }) {
   )
 }
 
-export default index
+export default Index
