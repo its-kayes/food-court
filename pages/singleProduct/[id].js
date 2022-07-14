@@ -40,8 +40,12 @@ const SingleProduct = () => {
 
     if (isLoading) {
         return <Loader> </Loader>
-        refetch();
     }
+
+    if(!data) {
+        return refetch();
+    }
+
     // setTotalPrice(product?.price);
 
     // if (product?.products === true) {

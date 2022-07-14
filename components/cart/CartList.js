@@ -8,12 +8,16 @@ import useUser from '../../hooks/useUser';
 export const CartList = () => {
     let user = useUser();
 
-    let { data, isLoading } = useQuery("orders", () =>
+    let { data, isLoading, refetch } = useQuery("orders", () =>
         fetch(`http://localhost:3000/api/orders?email=${user.email}`).then((res) => res.json())
     );
 
     if (isLoading) {
         return <Loader> </Loader>
+    }
+
+    if (!data) {
+        return refetch()
     }
     console.log(user.email);
     console.log(data.Orders);
