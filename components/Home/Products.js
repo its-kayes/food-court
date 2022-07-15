@@ -32,6 +32,7 @@ const Products = () => {
         fetch('https://food-court-xi.vercel.app/api/product')
             .then(res => res.json())
             .then(data => {
+                console.log(data);
                 setProducts(data.products)
                 setLoading(false)
             })
