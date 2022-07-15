@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import Blog from './Blog'
+// import Blog from './Blog'
 import Image from 'next/image'
 import { Footer } from '../../components/Footer/Footer'
 import { Navbar } from '../../components/Navbar/Navbar'
@@ -23,9 +23,22 @@ const Index = () => {
 
       <div className="grid-container md:grid grid-cols-12">
         <div className=" item1 col-span-8">
-          <div className="grid-container md:grid grid-cols-2 gap-4 p-7">
+          {/* <div className="grid-container md:grid grid-cols-2 gap-4 p-7">
             {
               foods.map(food => <Blog key={food._id}></Blog>)
+            }
+          </div> */}
+          <div className="grid-container md:grid grid-cols-2 gap-4 p-7">
+            {
+              foods.map(food => <div key={food._id}>
+                <div className="card card-compact w-96 bg-base-100 shadow-xl mx-auto">
+                  <figure><img src={food.img} alt="Shoes" /></figure>
+                  <div className="card-body">
+                    <h2 className="card-title">{food.name}</h2>
+                    <p>If a dog chews shoes whose shoes does he choose?</p>
+                  </div>
+                </div>
+              </div>)
             }
           </div>
         </div>
