@@ -25,7 +25,7 @@ const Index = () => {
         <div className=" item1 col-span-8">
           <div className="grid-container md:grid grid-cols-2 gap-4 p-7">
             {
-              foods.map(food => <Blog key={food._id} food={food}></Blog>)
+              foods.map(food => <Blog key={food._id}></Blog>)
             }
           </div>
         </div>
