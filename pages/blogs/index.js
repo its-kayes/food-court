@@ -43,7 +43,7 @@ const Index = () => {
               <h1 className='text-2xl font-medium mb-6'>Recent Post</h1>
 
               {
-                foods.map(food => <div key={food._id} food={food} className='flex items-center mb-5'>
+                foods.map(food => <div key={food._id} className='flex items-center mb-5'>
                   <Image width={60} height={80} className='' src={food.img} alt="" />
                   <h4 className='font-medium p-3 text-lg'>{food.name}</h4>
                 </div>)
