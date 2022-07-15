@@ -32,7 +32,7 @@ const SingleProduct = () => {
     console.log(user);
 
 
-    let { data, isLoading, refetch } = useQuery('singleproduct', () => fetch(`https://food-court-d87gj4rlj-its-kayes.vercel.app/api/singleproduct?id=${id.id}`).then(res => res.json()))
+    let { data, isLoading, refetch } = useQuery('singleproduct', () => fetch(`https://food-court-xi.vercel.app/api/singleproduct?id=${id.id}`).then(res => res.json()))
 
     // if(!_id) {
     //     return <Loader> </Loader>
@@ -74,7 +74,7 @@ const SingleProduct = () => {
         console.log(data);
 
 
-        fetch("https://food-court-d87gj4rlj-its-kayes.vercel.app/api/orders", {
+        fetch("https://food-court-xi.vercel.app/api/orders", {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

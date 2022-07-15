@@ -45,7 +45,7 @@ function Index() {
 
         const toastify = toast.loading("Please wait...")
 
-        fetch('https://food-court-d87gj4rlj-its-kayes.vercel.app/api/users', {
+        fetch('https://food-court-xi.vercel.app/api/users', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

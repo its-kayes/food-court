@@ -3,7 +3,7 @@ import Loader from "../components/Loader/Loader";
 
 const useProducts = () => {
 
-    let { data, isLoading, refetch } = useQuery('products', () => fetch('https://food-court-d87gj4rlj-its-kayes.vercel.app/api/product').then(res => res.json()))
+    let { data, isLoading, refetch } = useQuery('products', () => fetch('https://food-court-xi.vercel.app/api/product').then(res => res.json()))
 
     if (isLoading) {
         return <Loader> </Loader>

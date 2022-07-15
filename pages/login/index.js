@@ -24,7 +24,7 @@ function Index() {
       return;
     }
 
-    fetch(`https://food-court-d87gj4rlj-its-kayes.vercel.app/api/users/login`, {
+    fetch(`https://food-court-xi.vercel.app/api/users/login`, {
       method: "POST",
       headers: {
         'content-type': 'application/json'

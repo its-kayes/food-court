@@ -11,7 +11,7 @@ const Index = () => {
 
     useEffect(() => {
         setLoading(true)
-        fetch('https://food-court-d87gj4rlj-its-kayes.vercel.app/api/product')
+        fetch('https://food-court-xi.vercel.app/api/product')
             .then(res => res.json())
             .then(data => {
                 setProducts(data.products)
