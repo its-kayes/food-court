@@ -10,7 +10,7 @@ import { useQuery } from 'react-query';
 
 const Index = () => {
 
-    let { data, isLoading, refetch } = useQuery('products', () => fetch('http://localhost:3000/api/product').then(res => res.json()))
+    let { data, isLoading, refetch } = useQuery('products', () => fetch('https://food-court-d87gj4rlj-its-kayes.vercel.app/api/product').then(res => res.json()))
 
     if (isLoading) {
         return <Loader> </Loader>

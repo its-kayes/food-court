@@ -15,7 +15,7 @@ const Products = () => {
     const [products, setProducts] = useState([])
     const [isLoading, setLoading] = useState(false)
 
-    // let {data, isLoading, refetch} = useQuery('products', ()=> fetch('http://localhost:3000/api/product').then(res => res.json()))
+    // let {data, isLoading, refetch} = useQuery('products', ()=> fetch('https://food-court-d87gj4rlj-its-kayes.vercel.app/api/product').then(res => res.json()))
 
     // if(isLoading) {
     //     return <Loader> </Loader>
@@ -29,7 +29,7 @@ const Products = () => {
 
     useEffect(() => {
         setLoading(true)
-        fetch('http://localhost:3000/api/product')
+        fetch('https://food-court-d87gj4rlj-its-kayes.vercel.app/api/product')
             .then(res => res.json())
             .then(data => {
                 setProducts(data.products)
@@ -138,19 +138,19 @@ const Products = () => {
                                             <div>
                                                 <span className="font-bold text-xl">{product.price}</span>&nbsp;<span className="text-sm font-semibold">BDT</span>
                                             </div> */}
-                                            {/* <div>
+                {/* <div>
                                 <button onClick={() => addToCart(_id)} className="btn btn-sm text-white"><AiOutlineShoppingCart className='mr-3' /> Add to Cart</button>
                             </div> */}
-                                            {/* <div>
+                {/* <div>
                                                 <button onClick={() => router.push({
                                                     pathname: '/singleproduct/[pid]',
                                                     query: { pid: product._id },
                                                 })} className="btn btn-sm text-white"><AiOutlineShoppingCart className='mr-3' /> Add to Cart</button>
                                             </div> */}
-                                            {/* <div>
+                {/* <div>
                                 <button onClick={() => router.push(`singleproduct/${_id}`)} className="btn btn-sm text-white"><AiOutlineShoppingCart className='mr-3' /> Add to Cart</button>
                             </div> */}
-                                        {/* </div>
+                {/* </div>
                                     </div>
                                 </a>
                             </div>

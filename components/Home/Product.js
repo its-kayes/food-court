@@ -22,7 +22,7 @@ const Product = ({ product }) => {
 
 
 
-        fetch('http://localhost:3000/api/cart', {
+        fetch('https://food-court-d87gj4rlj-its-kayes.vercel.app/api/cart', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
