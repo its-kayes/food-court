@@ -8,7 +8,7 @@ import { Navbar } from '../../components/Navbar/Navbar'
 const Index = () => {
   const [foods, setFoods] = useState([])
   useEffect(() => {
-    fetch('https://food-court-xi.vercel.app/api/blog')
+    fetch('http://localhost:3000/api/blog')
       .then(res => res.json())
       .then(data => {
         console.log(data.blogs);

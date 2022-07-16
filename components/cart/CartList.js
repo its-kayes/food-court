@@ -17,10 +17,10 @@ export const CartList = () => {
     let [inTotal, setInTotal] = useState(0);
 
     let { data, isLoading, refetch } = useQuery("orders", () =>
-        fetch(`https://food-court-xi.vercel.app/api/orders?email=${user.email}`).then((res) => res.json())
+        fetch(`http://localhost:3000/api/orders?email=${user.email}`).then((res) => res.json())
     );
     // let { data, isLoading, refetch } = useQuery("orders", () =>
-    //     fetch(`https://food-court-xi.vercel.app/api/orders?email=${emailx}`).then((res) => res.json())
+    //     fetch(`http://localhost:3000/api/orders?email=${emailx}`).then((res) => res.json())
     // );
 
 
