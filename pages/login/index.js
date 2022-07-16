@@ -1,7 +1,9 @@
 import React from 'react'
 
+
 function index() {
   return (
+
     <div className=' font-serif flex  h-screen justify-center items-center bg-accent'>
 
       <div className="card  m-5 bg-white shadow-xl">
@@ -26,6 +28,7 @@ function index() {
       </div>
 
     </div>
+
   )
 }
 
