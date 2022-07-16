@@ -36,6 +36,8 @@ export const CartList = () => {
     console.log(data);
     let totalOrder = data.Orders;
 
+    
+
     let price = totalOrder.map(p => p.totalPrice);
     let sum = 0;
 
