@@ -2,9 +2,9 @@
     "version": 2,
     "name": "mongoose-crud",
     "builds": [
-      { "src": "db.js", "use": "@vercel/node" }
+      { "src": "script.js", "use": "@vercel/node" }
     ],
     "routes": [
-      { "src": "/(.*)", "dest": "/db.js" }
+      { "src": "/(.*)", "dest": "/script.js" }
     ]
   }
