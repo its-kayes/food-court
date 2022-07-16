@@ -1,9 +1,12 @@
 import Image from 'next/image';
 import React from 'react';
+import { Footer } from '../../components/Footer/Footer';
+import { Navbar } from '../../components/Navbar/Navbar';
 
 const index = () => {
     return (
         <div>
+            <Navbar> </Navbar>
             <div className='flex justify-around bg-[#FAF7F2] h-screen items-center p-40'>
                 <div className=''>
                     <div className='flex mt-6'>
@@ -26,8 +29,8 @@ const index = () => {
                 </div>
                 <div className=''>
                     <div className='flex'>
-                        <input type="text" placeholder="Your Name" class="font-semibold mx-5 my-10 h-16 input w-full max-w-xs" />
-                        <input type="email" placeholder="Your Email" class="font-semibold mx-5 my-10 h-16 input w-full max-w-xs" />
+                        <input type="text" placeholder="Your Name" className="font-semibold mx-5 my-10 h-16 input w-full max-w-xs" />
+                        <input type="email" placeholder="Your Email" className="font-semibold mx-5 my-10 h-16 input w-full max-w-xs" />
                     </div>
                     <div>
                         <textarea
@@ -45,6 +48,7 @@ const index = () => {
                     </div>
                 </div>
             </div>
+            <Footer> </Footer>
         </div>
     );
 };

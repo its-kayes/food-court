@@ -1,13 +1,18 @@
 import mongoose from 'mongoose'
 
-const MONGO_URL_NEW = process.env.MONGO_URL_NEW
+const MONGO_URL = process.env.MONGO_URL
 
-if (!MONGO_URL_NEW) {
+if (!MONGO_URL) {
   throw new Error(
     'Please define the MONGO_URL environment variable inside .env.local'
   )
 }
 
+/**
+ * Global is used here to maintain a cached connection across hot reloads
+ * in development. This prevents connections growing exponentially
+ * during API Route usage.
+ */
 let cached = global.mongoose
 
 if (!cached) {
@@ -24,10 +29,9 @@ async function dbConnect() {
       bufferCommands: false,
     }
 
-    cached.promise = mongoose.connect(MONGO_URL_NEW, opts).then((mongoose) => {
+    cached.promise = mongoose.connect(MONGO_URL, opts).then((mongoose) => {
       return mongoose
     })
-      .catch(err => console.error('Connection failed: ', err));
   }
   cached.conn = await cached.promise
   return cached.conn
