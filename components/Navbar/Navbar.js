@@ -4,13 +4,9 @@ import useUser from '../../hooks/useUser'
 
 export const Navbar = () => {
 
-<<<<<<< HEAD
-    const { user } = useUser();
-=======
     // const { user } = useUser();
     const user = useUser();
 
->>>>>>> 0834d8a1f106911f0bd5426ba2e4d647fbf97111
 
     // console.log(user.email)
     let email = user?.email;
