@@ -6,8 +6,10 @@ export default async function handler(req, res) {
     dbConnect();
 
     if( method === 'GET') {
+        let query = req.query;
+        console.log(query);
         try {
-            const Orders = await Order.find();
+            const Orders = await Order.find(query);
             res.send({Orders, message: " Order Load", success: true});
         } catch (error) {
             res.status(500).send({error: error, message: "Order Load Error", success: false});

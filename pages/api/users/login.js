@@ -1,5 +1,5 @@
 import dbConnect from "../../../utilities/db";
-import User from '../../../models/UsersSchema'
+import User from "../../../models/usersSchema";
 import md5 from "md5";
 
 export default async function handler(req, res) {

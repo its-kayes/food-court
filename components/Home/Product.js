@@ -2,13 +2,26 @@ import React from 'react';
 import Image from 'next/image'
 import { AiOutlineShoppingCart } from 'react-icons/ai'
 import Rating from "./Rating";
+import { useRouter } from 'next/router'
+import useProducts from '../../hooks/useProducts';
+
 // import Rating from './rating';
 
 const Product = ({ product }) => {
+    // const Product = () => {
+
+
+    const router = useRouter();
+    // const products = useProducts();
+
     const { title, img, status, price, rating, desc, _id } = product;
     const addToCart = (id) => {
+        // router.push(`/singleproduct/${id}`)
         const quantity = 1;
         const cartDetail = { id, quantity }
+
+
+
         fetch('http://localhost:3000/api/cart', {
             method: 'POST',
             headers: {
@@ -48,8 +61,14 @@ const Product = ({ product }) => {
                             <div>
                                 <span className="font-bold text-xl">{price}</span>&nbsp;<span className="text-sm font-semibold">BDT</span>
                             </div>
-                            <div>
+                            {/* <div>
                                 <button onClick={() => addToCart(_id)} className="btn btn-sm text-white"><AiOutlineShoppingCart className='mr-3' /> Add to Cart</button>
+                            </div> */}
+                            <div>
+                                <button onClick={() => router.push({
+                                    pathname: '/singleproduct/[pid]',
+                                    query: { pid: product._id },
+                                })} className="btn btn-sm text-white"><AiOutlineShoppingCart className='mr-3' /> Add to Cart</button>
                             </div>
                         </div>
                     </div>

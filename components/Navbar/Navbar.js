@@ -4,7 +4,13 @@ import useUser from '../../hooks/useUser'
 
 export const Navbar = () => {
 
+<<<<<<< HEAD
     const { user } = useUser();
+=======
+    // const { user } = useUser();
+    const user = useUser();
+
+>>>>>>> 0834d8a1f106911f0bd5426ba2e4d647fbf97111
 
     // console.log(user.email)
     let email = user?.email;
@@ -54,7 +60,7 @@ export const Navbar = () => {
                         </div>
                     </ul>
                 </div>
-                <a className="text-2xl"><span className='font-bold uppercase'>Food</span><span className='font-bold uppercase text-orange-400'>Court</span></a>
+                <Link href='/'><p> <span className='cursor-pointer text-2xl font-bold uppercase'>Food</span><span className='cursor-pointer text-2xl font-bold uppercase text-orange-400'>Court</span> </p></Link>
                 <div className='hidden lg:flex ml-8'>
                     <ul className="menu menu-horizontal p-0">
                         <li><Link href='/'><p className='font-semibold'>HOME</p></Link></li>
@@ -80,7 +86,7 @@ export const Navbar = () => {
                                 <li><Link href='/shop' className='font-semibold'>Shop</Link></li>
                             </ul>
                         </li>
-                        <li><Link href='/cart'><p className='font-semibold'>CART</p></Link></li>
+                        {/* <li><Link href='/cart'><p className='font-semibold'>CART</p></Link></li> */}
                         <li><Link href='/about'><p className='font-semibold'>ABOUT</p></Link></li>
                         <li><Link href='/contact'><p className='font-semibold'>CONTACT</p></Link></li>
                     </ul>
@@ -104,12 +110,11 @@ export const Navbar = () => {
 
                     {
                         email ?
-                            <div className='flex justify-between items-center'>
+                            <li><Link href='/cart'><div>
                                 <img src="https://i.ibb.co/r47stft/shopping-cart.png" alt="img" />
-                                <p className='ml-3 font-semibold'>45.67 $</p>
-                            </div>
+                                <p className='font-semibold'>$99+ </p>
+                            </div></Link></li>
                             :
-
                             <li><Link href='/login'><p className='font-semibold'>LOGIN</p></Link></li>
                     }
                 </ul>
