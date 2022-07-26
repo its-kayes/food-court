@@ -24,7 +24,7 @@ function Index() {
       return;
     }
 
-    fetch(`http://localhost:3000/api/users/login`, {
+    fetch(`https://food-court-xi.vercel.app/api/users/login`, {
       method: "POST",
       headers: {
         'content-type': 'application/json'

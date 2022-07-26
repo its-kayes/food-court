@@ -15,7 +15,7 @@ const Products = () => {
     const [products, setProducts] = useState([])
     const [isLoading, setLoading] = useState(false)
 
-    // let {data, isLoading, refetch} = useQuery('products', ()=> fetch('http://localhost:3000/api/product').then(res => res.json()))
+    // let {data, isLoading, refetch} = useQuery('products', ()=> fetch('https://food-court-xi.vercel.app/api/product').then(res => res.json()))
 
     // if(isLoading) {
     //     return <Loader> </Loader>
@@ -29,7 +29,7 @@ const Products = () => {
 
     useEffect(() => {
         setLoading(true)
-        fetch('http://localhost:3000/api/product')
+        fetch('https://food-court-xi.vercel.app/api/product')
             .then(res => res.json())
             .then(data => {
                 console.log(data);
