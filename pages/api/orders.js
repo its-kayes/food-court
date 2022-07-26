@@ -1,5 +1,5 @@
-import dbConnect from "../../../utilities/db";
-import Order from "../../../models/orderSchema";
+import dbConnect from "../../utilities/db";
+import Order from "../../models/orderSchema";
 
 export default async function handler(req, res) {
     const { method } = req;
