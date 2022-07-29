@@ -18,7 +18,7 @@ const useUser = () => {
         //     router.push('/')
         // }
         // useEffect(() => {
-        //     fetch(`https://food-court-xi.vercel.app/api/users?email=${email}`)
+        //     fetch(`http://localhost:3000/api/users?email=${email}`)
         //         .then(res => res.json())
         //         .then(data => {
         //             if (data.success) {
@@ -31,7 +31,7 @@ const useUser = () => {
 
     // let email = localStorage.getItem('email')
 
-    let { data, isLoading } = useQuery("user", () => fetch(`https://food-court-xi.vercel.app/api/users?email=${email}`).then(res => res.json()));
+    let { data, isLoading } = useQuery("user", () => fetch(`http://localhost:3000/api/users?email=${email}`).then(res => res.json()));
 
     if (isLoading) {
         return <Loader> </Loader>
@@ -42,14 +42,14 @@ const useUser = () => {
     }
 
 
-    // let  data  = axios.get(`https://food-court-xi.vercel.app/api/users?email=${email}`) 
+    // let  data  = axios.get(`http://localhost:3000/api/users?email=${email}`) 
     // let user = { data }
 
     console.log(email)
 
 
     // useEffect(() => {
-    //     fetch(`https://food-court-xi.vercel.app/api/users?email=${email}`)
+    //     fetch(`http://localhost:3000/api/users?email=${email}`)
     //         .then(res => res.json())
     //         .then(data => {
     //             if (data.success) {
