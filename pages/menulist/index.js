@@ -1,21 +1,26 @@
+import React from 'react';
 import Image from "next/image";
-import { Footer } from "../../components/Footer/Footer";
-import { Navbar } from "../../components/Navbar/Navbar";
 import { itemImg, image } from '../../styles/menulist.module.css';
-import { itemsData } from "../api/data.json";
 
-export const getStaticProps = async () => {
-    return {
-        props: { items: itemsData },
-    };
-};
+import { Footer } from '../../components/Footer/Footer';
+import { Navbar } from '../../components/Navbar/Navbar';
+import useProducts from '../../hooks/useProducts';
+import Loader from '../../components/Loader/Loader';
+import { useQuery } from 'react-query';
 
-function index({ items }) {
+const Index = () => {
 
-    console.log(items);
+    let { data, isLoading, refetch } = useQuery('products', () => fetch('http://localhost:3000/api/product').then(res => res.json()))
+
+    if (isLoading) {
+        return <Loader> </Loader>
+    }
+    let products = data.products;
+
+
     return (
         <>
-            <Navbar> </Navbar>
+            <Navbar > </Navbar>
             <div className={image}>
                 <p className='text-3xl  text-center awesome-title text-red-600 pt-5'>Our signature</p>
                 <h1 className='text-5xl text-center font-semibold my-4'>Food Court Main Dishes</h1>
@@ -24,12 +29,12 @@ function index({ items }) {
 
                 <div className="grid grid-cols-2 ">
                     {
-                        items.map(item =>
+                        products.map(item =>
 
 
-                            <div key={item.id} className="card card-side">
+                            <div key={item._id} className="card card-side">
 
-                                <figure><img  className={itemImg} src={item.img} alt="aa"  ></img></figure>
+                                <figure><img className={itemImg} src={item.img} alt="aa"  ></img></figure>
                                 <div className="card-body">
                                     <h2 className="text-center text-2xl font-medium ">{item.name}</h2>
                                     <p className='text-lg text-center my-2 text-gray-400'>Pizza is a savory dish of Italian origin consisting of a usually round, flattened base of leavened.</p>
@@ -45,12 +50,11 @@ function index({ items }) {
                         )
                     }
                 </div>
-
-
             </div>
             <Footer> </Footer>
         </>
-    )
-}
+    );
 
-export default index
+};
+
+export default Index;

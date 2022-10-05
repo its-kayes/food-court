@@ -32,6 +32,7 @@ const Products = () => {
         fetch('http://localhost:3000/api/product')
             .then(res => res.json())
             .then(data => {
+                console.log(data);
                 setProducts(data.products)
                 setLoading(false)
             })
@@ -138,19 +139,19 @@ const Products = () => {
                                             <div>
                                                 <span className="font-bold text-xl">{product.price}</span>&nbsp;<span className="text-sm font-semibold">BDT</span>
                                             </div> */}
-                                            {/* <div>
+                {/* <div>
                                 <button onClick={() => addToCart(_id)} className="btn btn-sm text-white"><AiOutlineShoppingCart className='mr-3' /> Add to Cart</button>
                             </div> */}
-                                            {/* <div>
+                {/* <div>
                                                 <button onClick={() => router.push({
                                                     pathname: '/singleproduct/[pid]',
                                                     query: { pid: product._id },
                                                 })} className="btn btn-sm text-white"><AiOutlineShoppingCart className='mr-3' /> Add to Cart</button>
                                             </div> */}
-                                            {/* <div>
+                {/* <div>
                                 <button onClick={() => router.push(`singleproduct/${_id}`)} className="btn btn-sm text-white"><AiOutlineShoppingCart className='mr-3' /> Add to Cart</button>
                             </div> */}
-                                        {/* </div>
+                {/* </div>
                                     </div>
                                 </a>
                             </div>

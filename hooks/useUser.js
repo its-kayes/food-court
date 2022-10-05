@@ -27,13 +27,13 @@ const useUser = () => {
         //         })
         // }, [email])
     }
-    
+
 
     // let email = localStorage.getItem('email')
 
     let { data, isLoading } = useQuery("user", () => fetch(`http://localhost:3000/api/users?email=${email}`).then(res => res.json()));
 
-    if(isLoading) {
+    if (isLoading) {
         return <Loader> </Loader>
     }
 
@@ -58,7 +58,7 @@ const useUser = () => {
     //         })
     // }, [email])
 
-    return user ;
+    return user;
 };
 
 export default useUser;

@@ -1,5 +1,5 @@
-import dbConnect from "../../../utilities/db";
-import Cart from '../../../models/cartSehema';
+import dbConnect from "../../utilities/db";
+import Cart from '../../models/cartSehema';
 
 export default async function handler(req, res) {
     const { method } = req;

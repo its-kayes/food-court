@@ -1,5 +1,5 @@
-import dbConnect from "../../../utilities/db";
-import Blog from '../../../models/blogSchema'
+import dbConnect from "../../utilities/db";
+import Blog from '../../models/blogSchema'
 
 export default async function handler(req, res){
     const { method } = req;

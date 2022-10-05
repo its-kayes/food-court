@@ -1,6 +1,5 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import Blog from './Blog'
 import Image from 'next/image'
 import { Footer } from '../../components/Footer/Footer'
 import { Navbar } from '../../components/Navbar/Navbar'
@@ -9,9 +8,12 @@ import { Navbar } from '../../components/Navbar/Navbar'
 const Index = () => {
   const [foods, setFoods] = useState([])
   useEffect(() => {
-    fetch('food.json')
+    fetch('http://localhost:3000/api/blog')
       .then(res => res.json())
-      .then(data => setFoods(data))
+      .then(data => {
+        console.log(data.blogs);
+        setFoods(data.blogs);
+      })
   }, [])
   console.log(foods);
   return (
@@ -22,7 +24,15 @@ const Index = () => {
         <div className=" item1 col-span-8">
           <div className="grid-container md:grid grid-cols-2 gap-4 p-7">
             {
-              foods.map(food => <Blog key={food.date} food={food}></Blog>)
+              foods.map(food => <div key={food._id}>
+                <div className="card card-compact w-96 bg-base-100 shadow-xl mx-auto">
+                  <figure><img src={food.img} alt="Shoes" /></figure>
+                  <div className="card-body">
+                    <h2 className="card-title">{food.name}</h2>
+                    <p>If a dog chews shoes whose shoes does he choose?</p>
+                  </div>
+                </div>
+              </div>)
             }
           </div>
         </div>
@@ -40,7 +50,7 @@ const Index = () => {
               <h1 className='text-2xl font-medium mb-6'>Recent Post</h1>
 
               {
-                foods.map(food => <div key={food.date} food={food} className='flex items-center mb-5'>
+                foods.map(food => <div key={food._id} className='flex items-center mb-5'>
                   <Image width={60} height={80} className='' src={food.img} alt="" />
                   <h4 className='font-medium p-3 text-lg'>{food.name}</h4>
                 </div>)

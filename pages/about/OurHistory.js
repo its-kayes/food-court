@@ -3,6 +3,7 @@ import React from 'react';
 const OurHistory = () => {
   return (
     <div>
+      
             <div className="hero">
                 <div className="hero-content flex-col lg:flex-row">
                 <div className='text-center lg:text-left'>

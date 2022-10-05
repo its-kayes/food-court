@@ -42,7 +42,7 @@ const SingleProduct = () => {
         return <Loader> </Loader>
     }
 
-    if(!data) {
+    if (!data) {
         return refetch();
     }
 
@@ -168,7 +168,7 @@ const SingleProduct = () => {
                                 <span className=''>SKU: PZ2866</span> <span className='mx-12'>Categories: Pizza</span> <span>Tags: Boscaiola,Pizza</span>
                             </div>
                             <div>
-                                <div className={`flex items-center mt-28 `}>
+                                <div className={`flex items-center mt-28`}>
                                     <h1 onClick={() => {
                                         setInformation(false)
                                         setReviews(false)

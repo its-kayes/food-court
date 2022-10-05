@@ -1,5 +1,5 @@
-import dbConnect from "../../../utilities/db";
-import Product from '../../../models/productSchema';
+import dbConnect from "../../utilities/db";
+import Product from '../../models/productSchema';
 
 export default async function handler(req, res) {
     const { method } = req;
@@ -8,9 +8,13 @@ export default async function handler(req, res) {
     if (method === 'GET') {
         try {
             const products = await Product.find({});
-            res.send({ products, message: 'Successfully loaded products', success: true });
+            console.log(products);
+            res.status(200).json({ products, message: 'Successfully loaded products', success: true });
+            // res.send({ products, message: 'Successfully loaded products', success: true });
+
         } catch (error) {
-            res.status(500).send({ error: error, message: 'Server side error', success: false });
+            console.log("error", error);
+            res.status(500).send({ error: error, message: 'Server side error from products', success: false });
         }
     }
 

@@ -1,6 +1,6 @@
 const { ObjectId } = require('mongodb');
-import dbConnect from "../../../utilities/db";
-import Product from "../../../models/productSchema";
+import dbConnect from "../../utilities/db";
+import Product from "../../models/productSchema";
 // import Cart from "../../../models/cartSehema";
 
 
